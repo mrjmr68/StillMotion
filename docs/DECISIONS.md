@@ -96,3 +96,56 @@ cheaper, and safe since row ownership never changes after insert.
 normalized join table, not a `text[]` column on `user_preferences`** —
 gives real FK integrity against `exercise_catalog`, so a removed catalog
 entry cascades cleanly instead of leaving a dangling id string.
+
+**Catalog relations are drafted as names, resolved to ids at import.** The LLM
+never emits `progression_id`/`regression_id` — it emits `*_hint` fields holding
+movement *names*. Two reasons: generating in batches means the model would
+reference ids that don't exist yet and blow the FK, and naming a movement is the
+claim the model is actually qualified to make ("the harder version is a
+single-leg RDL") whereas picking a primary key is not. Import resolves names to
+ids against every drafted and already-imported entry, and drops unresolved hints
+with a warning rather than failing — a sparse progression chain is fine; an
+import that fails because a movement hasn't been drafted yet would be maddening.
+Import is therefore two-pass (insert with null relations, then update them),
+because Postgres checks FKs per-row and a single multi-row insert where A
+references B fails if A is checked first. Both passes are idempotent, so a
+failure between them is fixed by re-running.
+
+**The LLM produces movement-science fields; the harness derives the rest.** The
+line: the model owns any field where a wrong value is a judgment a human must
+adjudicate; the harness owns any field where, given the others, exactly one
+value is correct — there a wrong value is a bug, not an opinion. So `id`,
+`asset_tier`, `asset_path`, `loop_seconds`, and the reps/`rep_cap_seconds`
+coupling are computed. Notably **`is_anchor` is hard-coded `false`**: the spec's
+own open-items list says the anchor set is an undecided owner decision, and
+letting the model guess would silently manufacture a decision that was
+explicitly deferred. Side benefit: the structured-output schema drops to ~16
+fields, which improves generation reliability.
+
+**`default_dose` is per side; `rep_cap_seconds` bounds the whole block.** For a
+unilateral movement, 8 reps means 8 on *each* side — matching how
+`hold_per_side` already reads, and the runtime schedules both sides anyway.
+`rep_cap_seconds` is the wall-clock ceiling for the entire set (the soft cap
+that auto-advances the stage), not the time for one rep, because that is what
+the planner needs to budget session duration. Neither is inferable from the
+schema, and inconsistency across 80 entries would be invisible — so both are
+stated in the generation prompt and enforced in the harness.
+
+**`src/lib/catalog/vocab.ts` serves both the validator and the prompt.** This is
+the hand-maintained vocab file the CHECK-vs-ENUM decision above anticipated. zod
+builds every enum from its arrays *and* the system prompt interpolates the same
+arrays, so prompt and validator cannot drift apart about what values are legal.
+Validation is split by severity: errors mirror the DB CHECKs (so we fail before
+paying for generation rather than eating a 23514 at INSERT), warnings are style
+signals that annotate an entry for review without blocking it. The LLM-facing
+zod schema deliberately contains no `.refine()` — refinements don't survive
+compilation to JSON Schema and would be a silent no-op on the model side.
+
+**Scripts run under `tsx`, not Node's native type stripping.**
+`--experimental-strip-types` won't resolve the `@/` path aliases, and with no
+`"type": "module"` in package.json Node would treat `scripts/**/*.ts` as CJS (no
+top-level await). Adding `"type": "module"` at the root to work around that is
+too much blast radius for a build script. Scripts are launched with
+`--env-file-if-exists=.env.local` rather than `--env-file`, because the latter
+hard-fails opaquely when the file is missing and `.env.local` is gitignored —
+`scripts/catalog/lib/env.ts` produces a useful message instead.
