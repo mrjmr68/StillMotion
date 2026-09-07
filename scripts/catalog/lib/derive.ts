@@ -8,7 +8,13 @@
  */
 
 import { deriveId } from '../../../src/lib/catalog/ids';
-import type { CatalogRow, DraftEntry } from '../../../src/lib/catalog/schema';
+import {
+  rowErrors,
+  rowWarnings,
+  type CatalogRow,
+  type DraftEntry,
+  type Finding,
+} from '../../../src/lib/catalog/schema';
 import { REP_CAP_SECONDS_PER_REP } from '../../../src/lib/catalog/vocab';
 
 /** The subset of a row the harness computes rather than the model. */
@@ -85,4 +91,35 @@ export function toCatalogRow(draft: DraftEntry, derived: DerivedFields): Catalog
     loop_seconds: derived.loop_seconds,
     is_anchor: derived.is_anchor,
   };
+}
+
+/**
+ * Recompute everything downstream of `draft` for an entry loaded from disk.
+ *
+ * `derived`, `errors`, and `warnings` are all functions of `draft`, so they are
+ * refreshed on every command rather than trusted from the file — otherwise
+ * editing a name in the JSON would leave a stale id pointing at the old one.
+ *
+ * The exception is an already-imported entry: its id is frozen, because
+ * `exercise_logs` and `user_movement_preferences` FK into it and re-keying the
+ * row would orphan that history.
+ */
+export function refreshEntry<
+  T extends {
+    draft: DraftEntry;
+    derived: DerivedFields;
+    idOverride: string | null;
+    importedAt: string | null;
+    errors: Finding[];
+    warnings: Finding[];
+  },
+>(entry: T, taken: ReadonlySet<string> = new Set()): T {
+  const frozenId = entry.importedAt ? entry.derived.id : null;
+  const derived = deriveFields(entry.draft, {
+    taken,
+    idOverride: frozenId ?? entry.idOverride,
+  });
+  const row = toCatalogRow(entry.draft, derived);
+
+  return { ...entry, derived, errors: rowErrors(row), warnings: rowWarnings(row) };
 }

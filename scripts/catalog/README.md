@@ -24,11 +24,53 @@ npm run catalog:generate -- --category hinge
 
 # Everything, at lower effort
 npm run catalog:generate -- --all --effort medium
+
+# See what has been drafted and what still needs a decision
+npm run catalog:review
+
+# Work through pending entries one at a time
+npm run catalog:review -- --triage
+
+# See what import would write (dry run)
+npm run catalog:import
+
+# Actually write it
+npm run catalog:import -- --commit
 ```
+
+### generate
 
 Flags: `--category <id>` (repeatable) or `--all`, `--count <n>` to override the
 category's target, `--effort low|medium|high|xhigh|max` (default `high`),
 `--dry-run`.
+
+### review
+
+Without `--triage` it prints a status table. With it, you get one entry at a
+time and a single keystroke: `a` approve, `r` reject, `n` needs-review, `s`
+skip, `q` save and quit. Filter with `--category` and `--status`.
+
+This is the only command that can approve anything, and it only does so on an
+explicit keystroke — there is no bulk-approve flag, by design. An entry with
+validation errors cannot be approved at all.
+
+### import
+
+Dry run by default; `--commit` writes. An entry is eligible only if it is
+`approved` **and** still matches the content hash bound when it was approved, so
+editing an approved entry silently un-approves it and the exact bytes that reach
+Postgres are the exact bytes someone read. Any validation error in an approved
+entry aborts the whole run.
+
+Rewriting a row that already exists additionally needs `--allow-update`, because
+`exercise_logs` and `user_movement_preferences` FK into this table.
+
+Import runs in two passes: rows first with null relations, then the
+progression/regression links. Postgres checks foreign keys per row, so a single
+insert where A references B fails if A is checked first. Both passes are
+idempotent, so a failure between them is fixed by re-running — and re-running
+after more categories are drafted is also how hints that couldn't resolve the
+first time get linked up.
 
 Categories are defined in [`categories.ts`](./categories.ts) — that file is data,
 edit the counts and briefs freely.
@@ -70,9 +112,8 @@ Relations are drafted as movement **names**, not ids — the model can't referen
 ids that don't exist yet, and naming is the claim it's actually qualified to
 make. Names resolve to ids at import time.
 
-## Not built yet (increment 2)
+## Not built yet
 
-`review` (terminal triage loop), `import` (two-pass insert-then-link, dry-run by
-default), `check` (dangling refs, coverage matrix, vocab-vs-live-CHECK drift).
-Import will additionally bind a content hash at approval time, so editing an
-approved entry silently un-approves it.
+`check` — a health command for dangling soft refs, the pattern × body_position
+coverage matrix, anchor count, and drift between `vocab.ts` and the live CHECK
+constraints.
