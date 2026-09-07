@@ -1,6 +1,6 @@
 {
   "category": "breath_yoga",
-  "generatedAt": "2026-09-07T15:27:35.620Z",
+  "generatedAt": "2026-09-07T19:25:47.589Z",
   "model": "claude-opus-5",
   "promptVersion": 2,
   "entries": [
@@ -61,7 +61,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "f057c3c1f17bfca105ea28767db59d3e46fa38efe4913f953322625426a58c48",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -117,7 +117,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "e2a31dedf330269a8c027fb8e7e21ec88871dc715c5cd7adc2ce420aec2d0bd0",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -177,7 +177,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "61279f4b0d88fc07c0ca3a2730da9c0c8ad6edff1d6dc4d2017040875936e4df",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -239,7 +239,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "9026c243d7ce706e559eb5254dbcceacee2e9389ad4135d4de51f6b938c93057",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -303,7 +303,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "0df561c02a194d2269e66b779c477e4b9e2464a341f03dcfa86f43480a10598a",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -365,7 +365,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "027eaa735b6c8b6e2d76b8b2f11958c49b72c59a7bc5779792302d3657d88c4f",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -427,7 +427,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "80af78a0a7c252f6ec3e54e6d8b54f08c39a2d12f8947327142d002d992461e8",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
     },
     {
       "status": "approved",
@@ -488,7 +488,72 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "0e5655ac91afb159c7b5ab6dd9401c4c52498bf2deb3cee4317a40b620d28005",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T15:44:18.959Z"
+      "importedAt": "2026-09-07T19:24:30.378Z"
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Cat-Cow",
+        "aka": [
+          "Cat-Camel",
+          "Marjaryasana-Bitilasana",
+          "Cat Cow Stretch",
+          "Cat and Cow"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "hip",
+          "neck"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "breaths",
+        "default_dose": 8,
+        "rep_cap_seconds": null,
+        "intensity": 1,
+        "cues": [
+          "Inhale, lift your chest.",
+          "Exhale, round your back.",
+          "Start the motion at your tailbone.",
+          "Move slower than feels natural."
+        ],
+        "setup_note": "Mat down, hands under shoulders and knees under hips.",
+        "progression_hint": "Thread the Needle",
+        "regression_hint": "Seated Thoracic Rotation",
+        "pairs_well_with_hints": [
+          "Child's Pose",
+          "Quadruped Belly Breathing",
+          "Bird Dog"
+        ],
+        "avoid_after_hints": [
+          "Sphinx Pose"
+        ]
+      },
+      "derived": {
+        "id": "rotate_cat_cow",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_cat_cow/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
     }
   ]
 }

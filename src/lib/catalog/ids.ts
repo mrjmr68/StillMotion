@@ -16,12 +16,23 @@ const MAX_ID_LENGTH = 48;
  * "cossack  squat", and "Cossack-Squat" all normalize to "cossack squat".
  */
 export function normalizeName(value: string): string {
-  return value
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
+  return (
+    value
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      // Possessives collapse to the bare noun, so "Farmer's Carry" and "Farmer
+      // Carry" are the same movement. Without this the apostrophe becomes a
+      // separator and leaves a stray "s" token ("farmer s carry"), which both
+      // drops valid relation hints and hides real duplicates. Observed on the
+      // first real catalog with Farmer's Carry and Child's Pose.
+      .replace(/['\u2019]s\b/g, '')
+      // Any other apostrophe is removed rather than turned into a space, so
+      // contractions don't split into fragments.
+      .replace(/['\u2019]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim()
+  );
 }
 
 /** Like `normalizeName`, but underscore-joined for use inside an id. */

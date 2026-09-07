@@ -149,3 +149,29 @@ too much blast radius for a build script. Scripts are launched with
 `--env-file-if-exists=.env.local` rather than `--env-file`, because the latter
 hard-fails opaquely when the file is missing and `.env.local` is gitignored —
 `scripts/catalog/lib/env.ts` produces a useful message instead.
+
+**Name normalization strips possessives.** `normalizeName` turned "Farmer's
+Carry" into `farmer s carry`, which does not match `farmer carry` — so a
+relation hint saying "Farmer Carry" silently failed to resolve against the
+catalog entry named "Farmer's Carry", and a genuine duplicate spelled with an
+apostrophe would have slipped past dedupe. Possessive `'s` is now removed before
+the non-alphanumeric collapse, and other apostrophes are dropped rather than
+turned into separators. Found on the first real catalog, affecting Farmer's
+Carry and Child's Pose.
+
+**Freezing ids at import earned its keep immediately.** `deriveId` runs on
+`slugify`, which runs on `normalizeName` — so the possessive fix above silently
+changed what id "Farmer's Carry" would derive to (`carry_farmer_s_carry` →
+`carry_farmer_carry`). Because ids freeze once `importedAt` is set, the existing
+row kept its key instead of being re-inserted under a new one, which would have
+orphaned any `exercise_logs` rows pointing at the old id and left a duplicate
+catalog entry behind. Worth recording as a validated decision rather than a
+theoretical one: a normalization change is exactly the kind of edit that looks
+safe and silently re-keys a table.
+
+**LLM exemplars in the prompt become phantom relation targets.** Cat-Cow was one
+of two worked examples in the generation system prompt. The model never drafted
+it — correctly treating it as an example — but referenced it as a relation hint
+seven times across four different patterns, so those links had nowhere to land.
+Any movement used as an exemplar therefore has to be in some category's
+`mustInclude`, or it will be referenced and never exist.

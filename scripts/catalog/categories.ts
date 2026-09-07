@@ -50,6 +50,7 @@ export const CATEGORIES: Category[] = [
     patterns: ['hinge', 'ground_transition', 'anti_rotate', 'rotate'],
     modalities: ['breath', 'yoga', 'mobility'],
     allowedEquipment: ['mat', 'wall'],
+    mustInclude: ['Cat-Cow'],
     brief: [
       'Breathwork and yoga-derived shapes used to open a session (joint prep, down-regulation)',
       'or close it (parasympathetic). Include diaphragmatic and cadenced breathing done supine,',
@@ -93,6 +94,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 8,
     patterns: ['squat'],
     allowedEquipment: ['kettlebell', 'dumbbell', 'chair', 'wall', 'band'],
+    mustInclude: ['Double Kettlebell Front Rack Squat'],
     brief: [
       'Knee-dominant bilateral flexion: bodyweight squats, goblet squats, box/chair squats,',
       'wall-supported squats, deep squat holds, and tempo variants. Include a chair-assisted',
@@ -106,6 +108,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 6,
     patterns: ['lunge'],
     allowedEquipment: ['kettlebell', 'dumbbell', 'chair', 'wall', 'mat'],
+    mustInclude: ['Rear-Foot-Elevated Split Squat', 'Lateral Lunge'],
     brief: [
       'Split-stance and single-leg knee-dominant work: forward, reverse, and lateral lunges,',
       'split squats, step-ups, Cossack squats, and half-kneeling positions. Nearly all of these',
@@ -119,6 +122,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 6,
     patterns: ['push_h'],
     allowedEquipment: ['dumbbell', 'mat', 'wall', 'band'],
+    mustInclude: ['Standing Band Chest Press'],
     brief: [
       'Pressing away from the torso in the transverse plane: push-ups and their regressions',
       '(wall, incline, knee), floor presses, band presses, and plank-to-push transitions.',
@@ -144,6 +148,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 5,
     patterns: ['pull_h'],
     allowedEquipment: ['kettlebell', 'dumbbell', 'band', 'chair', 'mat'],
+    mustInclude: ['Half-Kneeling Band Row', 'Kettlebell Bent-Over Row'],
     brief: [
       'Drawing toward the torso in the transverse plane: rows in all their forms (bent-over,',
       'single-arm supported, band, prone), plus prone scapular retraction work. Include at least',
@@ -156,6 +161,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 5,
     patterns: ['pull_v'],
     allowedEquipment: ['band', 'mat', 'wall', 'dumbbell'],
+    mustInclude: ['Band Pull-Apart', 'Prone Superman Hold'],
     brief: [
       'Drawing down from overhead: band pulldowns, prone lat activation, scapular work, and',
       'hanging variants. This pattern is the hardest to serve without a pull-up bar, so lean on',
@@ -193,6 +199,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 4,
     patterns: ['carry'],
     allowedEquipment: ['kettlebell', 'dumbbell'],
+    mustInclude: ['Bottoms-Up Kettlebell Carry', 'Single-Arm Overhead Kettlebell Carry'],
     brief: [
       'Walking under load: farmer, suitcase, racked, and overhead carries. All standing, all',
       'duration-timed. Keep the batch small but distinct — the differences that matter are load',
@@ -206,6 +213,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 5,
     patterns: ['gait'],
     allowedEquipment: ['mat'],
+    mustInclude: ['Seated March', 'Lateral Step-Out'],
     brief: [
       'Locomotion and conditioning done in place or over short distance: marching, skipping,',
       'step-outs, crawling, shuttle steps, and low-impact cardio intervals. Modality is usually',
