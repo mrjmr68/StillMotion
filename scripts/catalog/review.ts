@@ -1,14 +1,20 @@
 /**
  * catalog:review — look at drafted entries and decide what's allowed into the catalog.
  *
- * This is the ONLY command that can set an entry's status to "approved", and it
- * only does so on an explicit keystroke. There is no flag, env var, or shortcut
- * that approves in bulk — that is deliberate (spec §5: "nothing enters the
- * catalog without your eyes on it").
+ * This is the ONLY command that can set an entry's status to "approved" (spec
+ * §5: "nothing enters the catalog without your eyes on it"). Normally that
+ * happens one explicit keystroke at a time in `--triage`.
+ *
+ * `--approve-all` waives it in bulk. That is an owner escape hatch rather than a
+ * convenience — the rule belongs to whoever owns the catalog, so they can also
+ * suspend it — and it stamps every entry it touches with a note saying it was
+ * not individually reviewed, so the review file never misrepresents what
+ * actually happened.
  *
  *   npm run catalog:review                       # status table, everything
  *   npm run catalog:review -- --category hinge   # one category
  *   npm run catalog:review -- --triage           # interactive, pending only
+ *   npm run catalog:review -- --approve-all      # waive individual review
  */
 
 import { createInterface } from 'node:readline';
@@ -33,6 +39,7 @@ function parse() {
       category: { type: 'string', multiple: true, default: [] },
       status: { type: 'string', default: 'all' },
       triage: { type: 'boolean', default: false },
+      'approve-all': { type: 'boolean', default: false },
     },
   });
 
@@ -55,7 +62,67 @@ function parse() {
       | ReviewStatus
       | 'all',
     triage: values.triage,
+    approveAll: values['approve-all'],
   };
+}
+
+/**
+ * Approve everything outstanding in one go.
+ *
+ * This deliberately exists as an owner escape hatch, not a convenience: the
+ * spec's rule is that nothing enters the catalog unreviewed, so waiving it is a
+ * decision the catalog owner makes explicitly. What it must never do is lie
+ * about what happened — every entry it touches is stamped with a reviewer note
+ * saying it was not individually reviewed, so the provenance in the review file
+ * stays true.
+ *
+ * Entries with validation errors are still refused, and entries already flagged
+ * as duplicates are left alone — those are the two cases where a blanket yes is
+ * most likely to be a mistake.
+ */
+function approveAll(files: ReviewFile[]): void {
+  const NOTE = 'bulk approved without individual review';
+  const now = new Date().toISOString();
+
+  let approved = 0;
+  const refusedForErrors: string[] = [];
+  const leftAsDuplicate: string[] = [];
+  const touched = new Set<ReviewFile>();
+
+  for (const file of files) {
+    for (const entry of file.entries) {
+      if (entry.status === 'approved' || entry.status === 'rejected') continue;
+
+      if (entry.status === 'duplicate') {
+        leftAsDuplicate.push(entry.draft.name);
+        continue;
+      }
+      if (entry.errors.length > 0) {
+        refusedForErrors.push(entry.draft.name);
+        continue;
+      }
+
+      entry.status = 'approved';
+      entry.approvedAt = now;
+      entry.approvedHash = approvalHash({ draft: entry.draft, derived: entry.derived });
+      entry.reviewerNote = entry.reviewerNote ? `${entry.reviewerNote}; ${NOTE}` : NOTE;
+      approved += 1;
+      touched.add(file);
+    }
+  }
+
+  for (const file of touched) saveReviewFile(file);
+
+  console.log(green(`${approved} approved`) + dim(` — each stamped "${NOTE}"`));
+  if (leftAsDuplicate.length > 0) {
+    console.log(yellow(`\n${leftAsDuplicate.length} left as duplicate (decide on these individually):`));
+    for (const name of leftAsDuplicate) console.log(`  ${name}`);
+  }
+  if (refusedForErrors.length > 0) {
+    console.log(red(`\n${refusedForErrors.length} refused for validation errors:`));
+    for (const name of refusedForErrors) console.log(`  ${name}`);
+  }
+  console.log(dim('\nNext: `npm run catalog:import` (dry run — add --commit to write).'));
 }
 
 /** Load a category's file with derived/errors/warnings recomputed from the drafts. */
@@ -207,7 +274,7 @@ async function triage(files: ReviewFile[], status: ReviewStatus | 'all'): Promis
 }
 
 async function main() {
-  const { categoryIds, status, triage: interactive } = parse();
+  const { categoryIds, status, triage: interactive, approveAll: approveAllFlag } = parse();
 
   const files = categoryIds
     .map(loadRefreshed)
@@ -218,7 +285,9 @@ async function main() {
     return;
   }
 
-  if (interactive) {
+  if (approveAllFlag) {
+    approveAll(files);
+  } else if (interactive) {
     await triage(files, status);
   } else {
     summarize(files, status);

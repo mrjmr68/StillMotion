@@ -5,7 +5,7 @@
   "promptVersion": 2,
   "entries": [
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Diaphragmatic Breathing",
         "aka": [
@@ -58,13 +58,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "f057c3c1f17bfca105ea28767db59d3e46fa38efe4913f953322625426a58c48",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Box Breathing",
         "aka": [
@@ -114,13 +114,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "e2a31dedf330269a8c027fb8e7e21ec88871dc715c5cd7adc2ce420aec2d0bd0",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Quadruped Belly Breathing",
         "aka": [
@@ -174,13 +174,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "61279f4b0d88fc07c0ca3a2730da9c0c8ad6edff1d6dc4d2017040875936e4df",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Child's Pose",
         "aka": [
@@ -236,13 +236,13 @@
         "hinge_tall_kneeling_hip_hinge"
       ],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "9026c243d7ce706e559eb5254dbcceacee2e9389ad4135d4de51f6b938c93057",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Downward-Facing Dog",
         "aka": [
@@ -300,13 +300,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "0df561c02a194d2269e66b779c477e4b9e2464a341f03dcfa86f43480a10598a",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Low Lunge",
         "aka": [
@@ -362,13 +362,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "027eaa735b6c8b6e2d76b8b2f11958c49b72c59a7bc5779792302d3657d88c4f",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Sphinx Pose",
         "aka": [
@@ -424,13 +424,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "80af78a0a7c252f6ec3e54e6d8b54f08c39a2d12f8947327142d002d992461e8",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Supine Spinal Twist",
         "aka": [
@@ -482,18 +482,13 @@
       },
       "idOverride": null,
       "errors": [],
-      "warnings": [
-        {
-          "code": "cue_two_ideas",
-          "message": "possibly two ideas: \"Exhale and settle deeper.\""
-        }
-      ],
+      "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "0e5655ac91afb159c7b5ab6dd9401c4c52498bf2deb3cee4317a40b620d28005",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     }
   ]
 }

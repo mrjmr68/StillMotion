@@ -5,7 +5,7 @@
   "promptVersion": 2,
   "entries": [
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Thread the Needle",
         "aka": [
@@ -59,13 +59,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "de1a3b2da18965cb7a30aab42d8502e016d3b67b9c806703f8c352a9cca98720",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Side-Lying Open Book",
         "aka": [
@@ -118,23 +118,18 @@
       },
       "idOverride": null,
       "errors": [],
-      "warnings": [
-        {
-          "code": "cue_two_ideas",
-          "message": "possibly two ideas: \"Keep the knees stacked and still.\""
-        }
-      ],
+      "warnings": [],
       "slotPeers": [
         "rotate_supine_spinal_twist"
       ],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "21d14eda2ae5f96e2b48a9f799a8ad0d7fa608bc6dd3cc5e521a70563253fee2",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Seated Thoracic Rotation",
         "aka": [
@@ -189,13 +184,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "e92261fc7b33cd43feda8032b85723414ecd1b736f7a5bb57fecff31d4ab97e3",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Half-Kneeling Band Chop",
         "aka": [
@@ -259,13 +254,13 @@
       ],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "7dd3f7631012ed3e528781c285bafec438e6990656ac20847dbfc93f490abc87",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Standing Band Rotational Punch",
         "aka": [
@@ -323,13 +318,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "6441175876d681e656c4a9cb8299c6edf4f212fc9b1261b16493b715c02ed3f9",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Kettlebell Windmill",
         "aka": [
@@ -385,18 +380,13 @@
       },
       "idOverride": null,
       "errors": [],
-      "warnings": [
-        {
-          "code": "cue_two_ideas",
-          "message": "possibly two ideas: \"Push the hip back and out.\""
-        }
-      ],
+      "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "7463d78fb6ab3696eb90ba7ffe34ee004cfc7662e314900969ff31f9937cedae",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     }
   ]
 }

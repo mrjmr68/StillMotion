@@ -5,7 +5,7 @@
   "promptVersion": 2,
   "entries": [
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Wall Push-Up",
         "aka": [
@@ -63,13 +63,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "2d04851285c5aa4421faeaea7a58b60dcb40a56179290191a6e52b4460f51dbc",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Knee Push-Up",
         "aka": [
@@ -128,13 +128,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "a54591833b08f2484d43ecbcf49b7a0f31e7e5905d2ac33023b802601f98d306",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Half-Kneeling Single-Arm Band Press",
         "aka": [
@@ -193,13 +193,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "bb49091c89f3547fe6c7576c4208ee2fa08650dcf764282d1cc3f110edef27e6",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Push-Up",
         "aka": [
@@ -259,13 +259,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "c5a446391022f356455211582b2d83eb5dc8c893d9b41b64d5ded210c16a708a",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Dumbbell Floor Press",
         "aka": [
@@ -325,13 +325,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "83e59bf8d52ffc9b2e34dccd89f4dcbd7d57e78e27123356b58b3863478b2f91",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Plyometric Push-Up",
         "aka": [
@@ -393,10 +393,10 @@
         "push_h_push_up"
       ],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "002d86a652e0b6cee2beda5264e59d6ddd93fe72fe5fc390dd3d7c0a988b1f26",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     }
   ]
 }

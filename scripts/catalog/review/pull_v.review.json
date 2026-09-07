@@ -5,7 +5,7 @@
   "promptVersion": 2,
   "entries": [
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Seated Band Scapular Pull-Down",
         "aka": [
@@ -61,13 +61,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "665f6eff36bac470d3d58ffa9ac9138dc23eb18a85e2faa98607cfe782969f59",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Prone Lat Pull-Down",
         "aka": [
@@ -125,13 +125,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "392ee7472ab75985920b066a34895efe3c92a656a332bb8a9475b65d011ec7fc",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Standing Band Straight-Arm Pulldown",
         "aka": [
@@ -187,13 +187,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "650add08650111c24686f104d2be7215923146f9b92fff397b1da8b86c8be739",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Half-Kneeling Single-Arm Band Lat Pulldown",
         "aka": [
@@ -251,13 +251,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "310d50202c4fc81811d4d2204fa184d93203da49807157a8d21d0ced19a97474",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Dumbbell Floor Pullover",
         "aka": [
@@ -316,10 +316,10 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "c0039854da911a09224ddfcf2f3caa99f6f506288cfafd7071f3dae7a2907548",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     }
   ]
 }

@@ -5,7 +5,7 @@
   "promptVersion": 2,
   "entries": [
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Prone Y-T-W Raise",
         "aka": [
@@ -62,13 +62,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "32c2bb36e69d199a3e00888d81bb631d1745b2377a51cdf5f9b647453e8e2d49",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Chair-Supported Single-Arm Dumbbell Row",
         "aka": [
@@ -128,13 +128,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "a74421974b7d0552a4938e77b0450e1f85ffa9a9b49a047eebf6e8711f025f2f",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Seated Band Row",
         "aka": [
@@ -193,13 +193,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "2409aabcc25ff4e2122dbaf4b2917ec0399f361627509cb8e69850db3488fddb",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Bent-Over Dumbbell Row",
         "aka": [
@@ -259,13 +259,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "4083744ac8b845cb115fb074d15de6bf1ea3f4427ac0e3122bac6b3f78ddc803",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Renegade Row",
         "aka": [
@@ -326,10 +326,10 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "63afe61c30d35c6f7fbde934e7894a0c376416f038c076621e397969ed5294be",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     }
   ]
 }

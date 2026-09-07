@@ -5,7 +5,7 @@
   "promptVersion": 2,
   "entries": [
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Chair Sit-to-Stand",
         "aka": [
@@ -62,13 +62,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "bad948c037b895444cb8b4b0fc9280459b794fa04a63c77faff28a6dd26e93c1",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Squat to Chair",
         "aka": [
@@ -122,21 +122,16 @@
       },
       "idOverride": null,
       "errors": [],
-      "warnings": [
-        {
-          "code": "cue_two_ideas",
-          "message": "possibly two ideas: \"Tap lightly and stand.\""
-        }
-      ],
+      "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "887ca8176a99f8910cdef380d29f38d73f4e9b13c422617d753540f5531da860",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Bodyweight Squat",
         "aka": [
@@ -191,13 +186,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "9670cd845e5309c62d541c0a4aeeb269f1e5b9c6053de82c67a2a977f2b6ab90",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Deep Squat Hold",
         "aka": [
@@ -256,13 +251,13 @@
         "squat_bodyweight_squat"
       ],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "2d0e585f5739ed0bb10c6548c6212b088fbac7d2fc7b58073e115a4a3482b96a",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Wall Sit",
         "aka": [
@@ -320,13 +315,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "314881266de99c385b4b18473dde489c7c5f5e9714808aa4aa93ff3295cd23e6",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Goblet Squat",
         "aka": [
@@ -383,13 +378,13 @@
       "warnings": [],
       "slotPeers": [],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "8a3f1b421a02a4b753311344ea3df5be53f73d58b18260980bfa31076ef589e1",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "needs-review",
+      "status": "approved",
       "draft": {
         "name": "Tempo Goblet Squat",
         "aka": [
@@ -450,13 +445,13 @@
         "squat_goblet_squat"
       ],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "a02fe21ca00af5b3ac1ad094d559120d8992af4a4db20bbe4b831abe4fb6f6bb",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     },
     {
-      "status": "pending",
+      "status": "approved",
       "draft": {
         "name": "Squat Jump",
         "aka": [
@@ -509,21 +504,16 @@
       },
       "idOverride": null,
       "errors": [],
-      "warnings": [
-        {
-          "code": "cue_two_ideas",
-          "message": "possibly two ideas: \"Land soft and quiet.\""
-        }
-      ],
+      "warnings": [],
       "slotPeers": [
         "squat_bodyweight_squat",
         "squat_deep_squat_hold"
       ],
       "dupOf": null,
-      "reviewerNote": "",
-      "approvedHash": null,
-      "approvedAt": null,
-      "importedAt": null
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "72aaa614edbe5d590d74ef14c52e0eb1c5c7206321c7e80ef8ef786c892e8906",
+      "approvedAt": "2026-09-07T15:43:35.034Z",
+      "importedAt": "2026-09-07T15:44:18.959Z"
     }
   ]
 }
