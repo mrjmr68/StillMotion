@@ -26,11 +26,19 @@ renamed the middleware file convention to `proxy.ts`; `middleware.ts` is
 deprecated but still works via a compat shim. Used `proxy.ts` directly
 since we're starting fresh.
 
-**Auth uses the `token_hash` + `verifyOtp` flow, not PKCE `code` exchange.**
-Supabase's default magic-link email template links to
-`/auth/confirm?token_hash=...&type=email`. This is the current
-recommended pattern (confirmed against Supabase's own Next.js example,
-Aug 2026) and is simpler than PKCE — no second redirect round-trip.
+**Auth uses PKCE `code` exchange, not `token_hash` + `verifyOtp`.**
+Originally implemented as `token_hash` + `verifyOtp`, on the assumption
+that Supabase's default magic-link template (`{{ .ConfirmationURL }}`)
+passes `token_hash`/`type` straight through to `/auth/confirm`. In
+practice it doesn't: `{{ .ConfirmationURL }}` points at Supabase's own
+hosted `/auth/v1/verify` endpoint, which verifies the token on Supabase's
+domain and redirects back to `redirect_to` (our `/auth/confirm`) with a
+`?code=` param instead. Editing the template to emit `token_hash`
+directly requires custom SMTP to be configured first (Supabase locks
+template editing on the built-in mailer) — not worth blocking on for
+local dev. Switched `/auth/confirm` to `exchangeCodeForSession(code)`,
+which works with the default template unmodified. Revisit if/when custom
+SMTP is set up for production.
 
 **Env var is `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, not `..._ANON_KEY`.**
 Supabase renamed the client-side key from "anon key" to "publishable key"
