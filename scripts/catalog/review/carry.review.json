@@ -1,6 +1,6 @@
 {
   "category": "carry",
-  "generatedAt": "2026-09-07T15:37:34.584Z",
+  "generatedAt": "2026-09-07T19:27:19.561Z",
   "model": "claude-opus-5",
   "promptVersion": 2,
   "entries": [
@@ -66,7 +66,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "805cd8351f586cf5400932595aa0eaba77ef244e4030df0e164c5c74195a81e2",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -130,7 +130,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "9823344064a98eb5db72c020d2f2be949cf0eebc73f7ed084fb609b772e13bc1",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -195,7 +195,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "77fe17433d67d72c2db3f4f823493fab62863f1a947e4703c7b4b535ac353451",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -262,7 +262,148 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "12502212e538283a36541817bf7a0567cb865c53b05b5a48897263b06ced64c4",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
+    },
+    {
+      "status": "approved",
+      "draft": {
+        "name": "Bottoms-Up Kettlebell Carry",
+        "aka": [
+          "Bottoms-Up Carry",
+          "Bottom-Up Kettlebell Walk",
+          "Bottoms Up KB Carry",
+          "Upside-Down Kettlebell Carry"
+        ],
+        "modality": "strength",
+        "movement_pattern": "carry",
+        "primary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "secondary_regions": [
+          "wrist",
+          "elbow"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "duration",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 4,
+        "cues": [
+          "Crush the handle.",
+          "Keep the bell stacked upright.",
+          "Elbow tight to your ribs.",
+          "Walk slow and quiet."
+        ],
+        "setup_note": "One light kettlebell cleaned to the rack and a clear lane to walk.",
+        "progression_hint": "Single-Arm Overhead Kettlebell Carry",
+        "regression_hint": "Kettlebell Suitcase Carry",
+        "pairs_well_with_hints": [
+          "Goblet Squat",
+          "Half-Kneeling Band Pallof Press"
+        ],
+        "avoid_after_hints": [
+          "Farmer's Carry",
+          "Renegade Row"
+        ]
+      },
+      "derived": {
+        "id": "carry_bottoms_up_kettlebell_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/carry_bottoms_up_kettlebell_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "carry_cross_body_carry",
+        "carry_single_arm_overhead_carry",
+        "carry_single_arm_overhead_carry",
+        "carry_cross_body_carry"
+      ],
+      "dupOf": null,
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "fb48d82a0de555faf1a93d01648f8bc015385d620973150c1f22c4f3dcfa354a",
+      "approvedAt": "2026-09-07T19:28:28.586Z",
+      "importedAt": "2026-09-07T19:28:49.432Z"
+    },
+    {
+      "status": "approved",
+      "draft": {
+        "name": "Single-Arm Overhead Kettlebell Carry",
+        "aka": [
+          "Overhead Kettlebell Walk",
+          "One-Arm Overhead Kettlebell Carry",
+          "Single-Arm Waiter Carry",
+          "Overhead Suitcase Carry"
+        ],
+        "modality": "strength",
+        "movement_pattern": "carry",
+        "primary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "secondary_regions": [
+          "spine",
+          "hip"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "duration",
+        "default_dose": 25,
+        "rep_cap_seconds": null,
+        "intensity": 3,
+        "cues": [
+          "Lock the elbow straight.",
+          "Bicep beside your ear.",
+          "Ribs down.",
+          "Take short, even steps."
+        ],
+        "setup_note": "One kettlebell pressed overhead and a clear lane to walk.",
+        "progression_hint": "Bottoms-Up Kettlebell Carry",
+        "regression_hint": "Double Kettlebell Front Rack Carry",
+        "pairs_well_with_hints": [
+          "Kettlebell Windmill",
+          "Bodyweight Squat"
+        ],
+        "avoid_after_hints": [
+          "Kettlebell Push Press",
+          "Standing Dumbbell Overhead Press"
+        ]
+      },
+      "derived": {
+        "id": "carry_single_arm_overhead_kettlebell_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/carry_single_arm_overhead_kettlebell_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "carry_cross_body_carry",
+        "carry_single_arm_overhead_carry",
+        "carry_single_arm_overhead_carry",
+        "carry_cross_body_carry",
+        "carry_bottoms_up_kettlebell_carry"
+      ],
+      "dupOf": null,
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "c8b8dbc5bed999d5df50102ca5760e38952f6f65bd019972ac97c377b8047777",
+      "approvedAt": "2026-09-07T19:28:28.586Z",
+      "importedAt": "2026-09-07T19:28:49.432Z"
     }
   ]
 }

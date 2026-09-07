@@ -1,6 +1,6 @@
 {
   "category": "pull_h",
-  "generatedAt": "2026-09-07T15:33:59.162Z",
+  "generatedAt": "2026-09-07T19:26:40.924Z",
   "model": "claude-opus-5",
   "promptVersion": 2,
   "entries": [
@@ -65,7 +65,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "32c2bb36e69d199a3e00888d81bb631d1745b2377a51cdf5f9b647453e8e2d49",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -131,7 +131,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "a74421974b7d0552a4938e77b0450e1f85ffa9a9b49a047eebf6e8711f025f2f",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -196,7 +196,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "2409aabcc25ff4e2122dbaf4b2917ec0399f361627509cb8e69850db3488fddb",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -262,7 +262,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "4083744ac8b845cb115fb074d15de6bf1ea3f4427ac0e3122bac6b3f78ddc803",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -329,7 +329,138 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "63afe61c30d35c6f7fbde934e7894a0c376416f038c076621e397969ed5294be",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
+    },
+    {
+      "status": "approved",
+      "draft": {
+        "name": "Half-Kneeling Band Row",
+        "aka": [
+          "Kneeling Band Row",
+          "Half-Kneeling Single-Arm Band Row",
+          "Split-Kneeling Band Row",
+          "Tall Half-Kneeling Resistance Band Row"
+        ],
+        "modality": "strength",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "core",
+          "spine"
+        ],
+        "equipment": [
+          "band",
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 45,
+        "intensity": 2,
+        "cues": [
+          "Drive the elbow past your ribs.",
+          "Squeeze the shoulder blade back.",
+          "Stay tall through the hips.",
+          "Slow on the return."
+        ],
+        "setup_note": "Anchor a band at chest height and kneel on a mat facing it, one knee up.",
+        "progression_hint": "Kettlebell Bent-Over Row",
+        "regression_hint": "Seated Band Row",
+        "pairs_well_with_hints": [
+          "Half-Kneeling Single-Arm Band Press",
+          "Half-Kneeling Band Pallof Press"
+        ],
+        "avoid_after_hints": [
+          "Chair-Supported Single-Arm Dumbbell Row"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_half_kneeling_band_row",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_half_kneeling_band_row/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "b17e23803645c42b175c627b2a973a8f1e8c2c7bfc02bf0b51fa5a591f0c3aac",
+      "approvedAt": "2026-09-07T19:28:28.586Z",
+      "importedAt": "2026-09-07T19:28:49.432Z"
+    },
+    {
+      "status": "approved",
+      "draft": {
+        "name": "Kettlebell Bent-Over Row",
+        "aka": [
+          "KB Bent-Over Row",
+          "Double Kettlebell Row",
+          "Bent-Over Kettlebell Row",
+          "Two-Kettlebell Bent-Over Row"
+        ],
+        "modality": "strength",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "spine",
+          "hip",
+          "core"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 8,
+        "rep_cap_seconds": 40,
+        "intensity": 4,
+        "cues": [
+          "Hinge until your chest faces the floor.",
+          "Pull the bells to your hips.",
+          "Ribs down.",
+          "Lower under control."
+        ],
+        "setup_note": "Two kettlebells on the floor just outside your feet.",
+        "progression_hint": "Renegade Row",
+        "regression_hint": "Bent-Over Dumbbell Row",
+        "pairs_well_with_hints": [
+          "Standing Dumbbell Overhead Press",
+          "Goblet Squat"
+        ],
+        "avoid_after_hints": [
+          "Kettlebell Swing",
+          "Romanian Deadlift"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_kettlebell_bent_over_row",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_kettlebell_bent_over_row/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 40,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "6f9ffdbc6666dd2108b106c7b57e46c0c0576538adf7602103599badca16e825",
+      "approvedAt": "2026-09-07T19:28:28.586Z",
+      "importedAt": "2026-09-07T19:28:49.432Z"
     }
   ]
 }

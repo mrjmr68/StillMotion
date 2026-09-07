@@ -1,6 +1,6 @@
 {
   "category": "squat",
-  "generatedAt": "2026-09-07T15:29:42.643Z",
+  "generatedAt": "2026-09-07T19:25:55.377Z",
   "model": "claude-opus-5",
   "promptVersion": 2,
   "entries": [
@@ -65,7 +65,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "bad948c037b895444cb8b4b0fc9280459b794fa04a63c77faff28a6dd26e93c1",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -128,7 +128,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "887ca8176a99f8910cdef380d29f38d73f4e9b13c422617d753540f5531da860",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -189,7 +189,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "9670cd845e5309c62d541c0a4aeeb269f1e5b9c6053de82c67a2a977f2b6ab90",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -254,7 +254,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "2d0e585f5739ed0bb10c6548c6212b088fbac7d2fc7b58073e115a4a3482b96a",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -318,7 +318,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "314881266de99c385b4b18473dde489c7c5f5e9714808aa4aa93ff3295cd23e6",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -381,7 +381,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "8a3f1b421a02a4b753311344ea3df5be53f73d58b18260980bfa31076ef589e1",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -448,7 +448,7 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "a02fe21ca00af5b3ac1ad094d559120d8992af4a4db20bbe4b831abe4fb6f6bb",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
     },
     {
       "status": "approved",
@@ -513,7 +513,78 @@
       "reviewerNote": "bulk approved without individual review",
       "approvedHash": "72aaa614edbe5d590d74ef14c52e0eb1c5c7206321c7e80ef8ef786c892e8906",
       "approvedAt": "2026-09-07T15:43:35.034Z",
-      "importedAt": "2026-09-07T19:24:30.378Z"
+      "importedAt": "2026-09-07T19:28:49.432Z"
+    },
+    {
+      "status": "approved",
+      "draft": {
+        "name": "Double Kettlebell Front Rack Squat",
+        "aka": [
+          "Double KB Front Squat",
+          "Kettlebell Front Squat",
+          "Double Kettlebell Squat",
+          "Front Rack Squat"
+        ],
+        "modality": "strength",
+        "movement_pattern": "squat",
+        "primary_regions": [
+          "knee",
+          "hip"
+        ],
+        "secondary_regions": [
+          "core",
+          "spine",
+          "shoulder"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 6,
+        "rep_cap_seconds": 45,
+        "intensity": 5,
+        "cues": [
+          "Elbows tight to your ribs.",
+          "Sit straight down.",
+          "Drive the floor away.",
+          "Stay tall at the top."
+        ],
+        "setup_note": "Two matched kettlebells cleaned into the front rack.",
+        "progression_hint": "Tempo Double Kettlebell Front Rack Squat",
+        "regression_hint": "Goblet Squat",
+        "pairs_well_with_hints": [
+          "Double Kettlebell Front Rack Carry",
+          "Romanian Deadlift"
+        ],
+        "avoid_after_hints": [
+          "Goblet Squat",
+          "Squat Jump"
+        ]
+      },
+      "derived": {
+        "id": "squat_double_kettlebell_front_rack_squat",
+        "asset_tier": "still",
+        "asset_path": "catalog/squat_double_kettlebell_front_rack_squat/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "squat_goblet_squat",
+        "squat_tempo_goblet_squat",
+        "squat_goblet_squat",
+        "squat_tempo_goblet_squat"
+      ],
+      "dupOf": null,
+      "reviewerNote": "bulk approved without individual review",
+      "approvedHash": "91155036e1476007aa301c5f8abd0b3cc0141c7488d0d194a62e3d37951159ae",
+      "approvedAt": "2026-09-07T19:28:28.586Z",
+      "importedAt": "2026-09-07T19:28:49.432Z"
     }
   ]
 }
