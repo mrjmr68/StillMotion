@@ -1,0 +1,401 @@
+{
+  "category": "ground_transition",
+  "generatedAt": "2026-09-07T15:28:35.558Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Quadruped Rock Back",
+        "aka": [
+          "Rock Backs",
+          "All-Fours Rocking",
+          "Quadruped Rocking"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "ground_transition",
+        "primary_regions": [
+          "hip",
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "knee"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 40,
+        "intensity": 1,
+        "cues": [
+          "Sit your hips toward your heels.",
+          "Keep the back flat.",
+          "Move slowly.",
+          "Stop before the back rounds."
+        ],
+        "setup_note": "Kneel on a mat with hands under shoulders.",
+        "progression_hint": "Bear Crawl",
+        "regression_hint": "Child's Pose",
+        "pairs_well_with_hints": [
+          "Cat-Cow",
+          "Bird Dog"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "ground_transition_quadruped_rock_back",
+        "asset_tier": "still",
+        "asset_path": "catalog/ground_transition_quadruped_rock_back/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 40,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Segmental Rolling",
+        "aka": [
+          "Supine to Prone Roll",
+          "Developmental Rolling",
+          "Upper Body Roll"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "ground_transition",
+        "primary_regions": [
+          "spine",
+          "core"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "hip"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 5,
+        "rep_cap_seconds": 45,
+        "intensity": 2,
+        "cues": [
+          "Lead with your eyes.",
+          "Reach the arm across your body.",
+          "Let the legs stay quiet.",
+          "Roll one bone at a time."
+        ],
+        "setup_note": "Lie face up on a mat with room to roll both ways.",
+        "progression_hint": "Get-Up Roll to Elbow",
+        "regression_hint": "Supine Spinal Twist",
+        "pairs_well_with_hints": [
+          "Quadruped Rock Back",
+          "Dead Bug"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "ground_transition_segmental_rolling",
+        "asset_tier": "still",
+        "asset_path": "catalog/ground_transition_segmental_rolling/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Prone Press to Quadruped",
+        "aka": [
+          "Prone to All-Fours Transition",
+          "Push-Back to Hands and Knees",
+          "Prone Push-Back"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "ground_transition",
+        "primary_regions": [
+          "shoulder",
+          "spine"
+        ],
+        "secondary_regions": [
+          "hip",
+          "wrist"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 8,
+        "rep_cap_seconds": 40,
+        "intensity": 2,
+        "cues": [
+          "Press the floor away.",
+          "Tuck the knees under you.",
+          "Arrive on all fours quietly.",
+          "Lower back down with control."
+        ],
+        "setup_note": "Lie face down on a mat, hands beside your ribs.",
+        "progression_hint": "Bear Crawl",
+        "regression_hint": "Quadruped Rock Back",
+        "pairs_well_with_hints": [
+          "Sphinx Pose",
+          "Downward-Facing Dog"
+        ],
+        "avoid_after_hints": [
+          "Bear Crawl"
+        ]
+      },
+      "derived": {
+        "id": "ground_transition_prone_press_to_quadruped",
+        "asset_tier": "still",
+        "asset_path": "catalog/ground_transition_prone_press_to_quadruped/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 40,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Get-Up Roll to Elbow",
+        "aka": [
+          "Turkish Get-Up Roll to Elbow",
+          "Get-Up Sit-Up",
+          "Roll to Elbow"
+        ],
+        "modality": "strength",
+        "movement_pattern": "ground_transition",
+        "primary_regions": [
+          "core",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "hip",
+          "elbow"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 6,
+        "rep_cap_seconds": 45,
+        "intensity": 3,
+        "cues": [
+          "Punch the top fist at the ceiling.",
+          "Drive through the bent foot.",
+          "Post onto the down elbow.",
+          "Lower back slowly."
+        ],
+        "setup_note": "Lie face up on a mat, one knee bent, same-side arm reaching up.",
+        "progression_hint": "Get-Up to Half-Kneeling",
+        "regression_hint": "Segmental Rolling",
+        "pairs_well_with_hints": [
+          "Glute Bridge",
+          "Half-Kneeling to Standing"
+        ],
+        "avoid_after_hints": [
+          "Bear Crawl"
+        ]
+      },
+      "derived": {
+        "id": "ground_transition_get_up_roll_to_elbow",
+        "asset_tier": "still",
+        "asset_path": "catalog/ground_transition_get_up_roll_to_elbow/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "ground_transition_segmental_rolling"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Half-Kneeling to Standing",
+        "aka": [
+          "Kneeling to Stand",
+          "Half-Kneeling Rise",
+          "Split-Kneeling Stand-Up"
+        ],
+        "modality": "strength",
+        "movement_pattern": "ground_transition",
+        "primary_regions": [
+          "hip",
+          "knee"
+        ],
+        "secondary_regions": [
+          "ankle",
+          "core"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 6,
+        "rep_cap_seconds": 45,
+        "intensity": 3,
+        "cues": [
+          "Drive through the front heel.",
+          "Stand tall and stack the hips.",
+          "Lower the back knee softly.",
+          "Keep the chest up throughout."
+        ],
+        "setup_note": "Kneel on a mat with one foot forward, knee over ankle.",
+        "progression_hint": "Cross-Legged Sit-to-Stand",
+        "regression_hint": "Chair-Assisted Sit-to-Stand",
+        "pairs_well_with_hints": [
+          "Tall Kneeling Hip Hinge",
+          "Low Lunge"
+        ],
+        "avoid_after_hints": [
+          "Goblet Squat"
+        ]
+      },
+      "derived": {
+        "id": "ground_transition_half_kneeling_to_standing",
+        "asset_tier": "still",
+        "asset_path": "catalog/ground_transition_half_kneeling_to_standing/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Stand tall and stack the hips.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Bear Crawl",
+        "aka": [
+          "Quadruped Crawl",
+          "Leopard Crawl",
+          "Knees-Off Crawl"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "ground_transition",
+        "primary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "secondary_regions": [
+          "hip",
+          "wrist"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 40,
+        "rep_cap_seconds": null,
+        "intensity": 5,
+        "cues": [
+          "Knees hover off the floor.",
+          "Move opposite hand and foot.",
+          "Keep the hips low and level.",
+          "Take short steps."
+        ],
+        "setup_note": "Clear a few steps of floor space in front and behind you.",
+        "progression_hint": null,
+        "regression_hint": "Quadruped Rock Back",
+        "pairs_well_with_hints": [
+          "Child's Pose",
+          "Diaphragmatic Breathing"
+        ],
+        "avoid_after_hints": [
+          "Prone Press to Quadruped",
+          "Get-Up Roll to Elbow"
+        ]
+      },
+      "derived": {
+        "id": "ground_transition_bear_crawl",
+        "asset_tier": "still",
+        "asset_path": "catalog/ground_transition_bear_crawl/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Move opposite hand and foot.\""
+        },
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Keep the hips low and level.\""
+        }
+      ],
+      "slotPeers": [
+        "ground_transition_quadruped_rock_back"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

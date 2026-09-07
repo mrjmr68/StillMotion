@@ -190,8 +190,14 @@ export function rowWarnings(row: CatalogRow): Finding[] {
       findings.push({ code: 'cue_too_long', message: words + ' words: "' + cue + '"' });
     }
     // Two ideas in one cue — the spec asks for one idea per line.
-    if (/\band\b/i.test(cue) || cue.includes(';')) {
-      findings.push({ code: 'cue_two_ideas', message: 'possibly two ideas: "' + cue + '"' });
+    //
+    // Only a semicolon is checked. An earlier version also flagged the word
+    // "and", which was wrong 18 times out of 19 on the first real catalog:
+    // "Land soft and quiet", "Shoulders back and down", "Move opposite hand
+    // and knee" are all a single idea. A rule with that false-positive rate
+    // is worse than no rule, because it trains you to skim past warnings.
+    if (cue.includes(';')) {
+      findings.push({ code: 'cue_two_ideas', message: 'semicolon joins two ideas: "' + cue + '"' });
     }
   }
 

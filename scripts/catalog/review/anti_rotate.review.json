@@ -1,0 +1,408 @@
+{
+  "category": "anti_rotate",
+  "generatedAt": "2026-09-07T15:37:00.974Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Front Plank",
+        "aka": [
+          "Forearm Plank",
+          "Prone Plank",
+          "Elbow Plank",
+          "Plank"
+        ],
+        "modality": "strength",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "spine",
+          "hip"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 40,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Squeeze your glutes.",
+          "Ribs down.",
+          "Push the floor away.",
+          "Breathe slow and steady."
+        ],
+        "setup_note": "Mat down, elbows under shoulders.",
+        "progression_hint": "Plank Shoulder Tap",
+        "regression_hint": "Knee Plank",
+        "pairs_well_with_hints": [
+          "Side Plank",
+          "Glute Bridge"
+        ],
+        "avoid_after_hints": [
+          "Push-Up",
+          "Renegade Row"
+        ]
+      },
+      "derived": {
+        "id": "anti_rotate_front_plank",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_front_plank/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Breathe slow and steady.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Side Plank",
+        "aka": [
+          "Lateral Plank",
+          "Side Forearm Plank",
+          "Vasisthasana Forearm Variation"
+        ],
+        "modality": "strength",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "hip",
+          "spine"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": true,
+        "timing_type": "hold_per_side",
+        "default_dose": 25,
+        "rep_cap_seconds": null,
+        "intensity": 4,
+        "cues": [
+          "Drive your hips up.",
+          "Stack your shoulders.",
+          "Press the forearm down.",
+          "Reach the top arm tall."
+        ],
+        "setup_note": "Mat down, elbow under the bottom shoulder.",
+        "progression_hint": "Side Plank with Top-Leg Lift",
+        "regression_hint": "Kneeling Side Plank",
+        "pairs_well_with_hints": [
+          "Bird Dog",
+          "Dead Bug"
+        ],
+        "avoid_after_hints": [
+          "Front Plank",
+          "Kettlebell Suitcase Carry"
+        ]
+      },
+      "derived": {
+        "id": "anti_rotate_side_plank",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_side_plank/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Bird Dog",
+        "aka": [
+          "Quadruped Opposite Arm and Leg Reach",
+          "Bird-Dog",
+          "Pointer Dog"
+        ],
+        "modality": "strength",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core"
+        ],
+        "secondary_regions": [
+          "hip",
+          "shoulder",
+          "spine"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": true,
+        "timing_type": "hold_per_side",
+        "default_dose": 20,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Reach long, not high.",
+          "Keep hips level.",
+          "Drive the heel back.",
+          "Breathe while you hold."
+        ],
+        "setup_note": "Mat down, hands under shoulders.",
+        "progression_hint": "Bear Crawl",
+        "regression_hint": "Quadruped Arm Reach",
+        "pairs_well_with_hints": [
+          "Dead Bug",
+          "Glute Bridge"
+        ],
+        "avoid_after_hints": [
+          "Front Plank"
+        ]
+      },
+      "derived": {
+        "id": "anti_rotate_bird_dog",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_bird_dog/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Dead Bug",
+        "aka": [
+          "Supine Alternating Arm and Leg Extension",
+          "Deadbug",
+          "Supine Dead Bug"
+        ],
+        "modality": "strength",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core"
+        ],
+        "secondary_regions": [
+          "hip",
+          "shoulder"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 50,
+        "intensity": 2,
+        "cues": [
+          "Press your low back down.",
+          "Move one arm and opposite leg.",
+          "Exhale as you reach.",
+          "Slow all the way back."
+        ],
+        "setup_note": "Mat down, knees stacked over hips.",
+        "progression_hint": "Hollow Body Hold",
+        "regression_hint": "Supine March",
+        "pairs_well_with_hints": [
+          "Bird Dog",
+          "Glute Bridge"
+        ],
+        "avoid_after_hints": [
+          "Front Plank"
+        ]
+      },
+      "derived": {
+        "id": "anti_rotate_dead_bug",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_dead_bug/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Move one arm and opposite leg.\""
+        }
+      ],
+      "slotPeers": [
+        "anti_rotate_diaphragmatic_breathing"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Half-Kneeling Band Pallof Press",
+        "aka": [
+          "Pallof Press",
+          "Band Pallof Press",
+          "Half-Kneeling Anti-Rotation Press",
+          "Kneeling Pallof Press"
+        ],
+        "modality": "strength",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "hip"
+        ],
+        "equipment": [
+          "band",
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 8,
+        "rep_cap_seconds": 45,
+        "intensity": 3,
+        "cues": [
+          "Press straight out from your chest.",
+          "Stay square to the front.",
+          "Pause at full reach.",
+          "Squeeze the back glute."
+        ],
+        "setup_note": "Anchor the band at chest height to your side; mat under the down knee.",
+        "progression_hint": "Standing Band Pallof Press",
+        "regression_hint": "Half-Kneeling Band Chop",
+        "pairs_well_with_hints": [
+          "Bird Dog",
+          "Half-Kneeling Single-Arm Band Press"
+        ],
+        "avoid_after_hints": [
+          "Standing Band Rotational Punch"
+        ]
+      },
+      "derived": {
+        "id": "anti_rotate_half_kneeling_band_pallof_press",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_half_kneeling_band_pallof_press/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Kettlebell Suitcase Carry",
+        "aka": [
+          "Suitcase Carry",
+          "Single-Arm Farmer's Carry",
+          "One-Arm Loaded Carry",
+          "Suitcase Hold"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "spine",
+          "wrist"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "hold_per_side",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 5,
+        "cues": [
+          "Stand tall on both sides.",
+          "Crush the handle.",
+          "Keep shoulders level.",
+          "Walk smooth and quiet."
+        ],
+        "setup_note": "One heavy kettlebell and a clear walking path.",
+        "progression_hint": "Single-Arm Overhead Kettlebell Carry",
+        "regression_hint": "Half-Kneeling Band Pallof Press",
+        "pairs_well_with_hints": [
+          "Goblet Squat",
+          "Bird Dog"
+        ],
+        "avoid_after_hints": [
+          "Side Plank",
+          "Bent-Over Dumbbell Row"
+        ]
+      },
+      "derived": {
+        "id": "anti_rotate_kettlebell_suitcase_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_kettlebell_suitcase_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Walk smooth and quiet.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

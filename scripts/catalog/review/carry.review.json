@@ -1,0 +1,273 @@
+{
+  "category": "carry",
+  "generatedAt": "2026-09-07T15:37:34.584Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Farmer's Carry",
+        "aka": [
+          "Farmer Walk",
+          "Farmer's Walk",
+          "Double Dumbbell Carry",
+          "Two-Hand Loaded Carry"
+        ],
+        "modality": "strength",
+        "movement_pattern": "carry",
+        "primary_regions": [
+          "core",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "wrist",
+          "hip"
+        ],
+        "equipment": [
+          "dumbbell"
+        ],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 40,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Stand tall.",
+          "Crush the handles.",
+          "Walk quiet, short steps.",
+          "Shoulders back and down."
+        ],
+        "setup_note": "Two matched dumbbells on the floor and a clear walking path.",
+        "progression_hint": "Kettlebell Suitcase Carry",
+        "regression_hint": null,
+        "pairs_well_with_hints": [
+          "Goblet Squat",
+          "Bent-Over Dumbbell Row"
+        ],
+        "avoid_after_hints": [
+          "Bent-Over Dumbbell Row"
+        ]
+      },
+      "derived": {
+        "id": "carry_farmer_s_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/carry_farmer_s_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Shoulders back and down.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Double Kettlebell Front Rack Carry",
+        "aka": [
+          "Front Rack Carry",
+          "Racked Carry",
+          "Double Kettlebell Rack Walk",
+          "Front-Loaded Carry"
+        ],
+        "modality": "strength",
+        "movement_pattern": "carry",
+        "primary_regions": [
+          "core",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "spine",
+          "hip"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 3,
+        "cues": [
+          "Elbows tight to ribs.",
+          "Ribs down.",
+          "Breathe behind the brace.",
+          "Walk with even steps."
+        ],
+        "setup_note": "Two matched kettlebells cleaned to the chest and a clear walking path.",
+        "progression_hint": "Single-Arm Overhead Carry",
+        "regression_hint": "Farmer's Carry",
+        "pairs_well_with_hints": [
+          "Kettlebell Swing",
+          "Chair Step-Up"
+        ],
+        "avoid_after_hints": [
+          "Goblet Squat"
+        ]
+      },
+      "derived": {
+        "id": "carry_double_kettlebell_front_rack_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/carry_double_kettlebell_front_rack_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Single-Arm Overhead Carry",
+        "aka": [
+          "Waiter's Walk",
+          "Overhead Carry",
+          "One-Arm Overhead Walk",
+          "Kettlebell Overhead Carry"
+        ],
+        "modality": "strength",
+        "movement_pattern": "carry",
+        "primary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "secondary_regions": [
+          "wrist",
+          "spine"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "duration",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 4,
+        "cues": [
+          "Lock the elbow straight.",
+          "Bicep by your ear.",
+          "Ribs down.",
+          "Eyes forward."
+        ],
+        "setup_note": "One kettlebell pressed overhead and a clear walking path.",
+        "progression_hint": "Bottoms-Up Kettlebell Carry",
+        "regression_hint": "Double Kettlebell Front Rack Carry",
+        "pairs_well_with_hints": [
+          "Kettlebell Windmill",
+          "Wall Slide"
+        ],
+        "avoid_after_hints": [
+          "Standing Dumbbell Overhead Press",
+          "Kettlebell Push Press"
+        ]
+      },
+      "derived": {
+        "id": "carry_single_arm_overhead_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/carry_single_arm_overhead_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "needs-review",
+      "draft": {
+        "name": "Cross-Body Carry",
+        "aka": [
+          "Rack and Overhead Carry",
+          "Mixed Carry",
+          "Front Rack Overhead Carry",
+          "Double Kettlebell Cross Carry"
+        ],
+        "modality": "strength",
+        "movement_pattern": "carry",
+        "primary_regions": [
+          "core",
+          "shoulder",
+          "spine"
+        ],
+        "secondary_regions": [
+          "hip",
+          "wrist"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "duration",
+        "default_dose": 25,
+        "rep_cap_seconds": null,
+        "intensity": 5,
+        "cues": [
+          "Top arm locked out.",
+          "Bottom elbow into ribs.",
+          "Stay square walking forward.",
+          "Squeeze the glutes."
+        ],
+        "setup_note": "Two kettlebells, one pressed overhead and one held in the front rack.",
+        "progression_hint": null,
+        "regression_hint": "Single-Arm Overhead Carry",
+        "pairs_well_with_hints": [
+          "Half-Kneeling Band Pallof Press"
+        ],
+        "avoid_after_hints": [
+          "Single-Arm Overhead Carry",
+          "Kettlebell Push Press"
+        ]
+      },
+      "derived": {
+        "id": "carry_cross_body_carry",
+        "asset_tier": "still",
+        "asset_path": "catalog/carry_cross_body_carry/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "carry_single_arm_overhead_carry"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

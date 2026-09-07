@@ -1,0 +1,402 @@
+{
+  "category": "push_h",
+  "generatedAt": "2026-09-07T15:32:15.935Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Wall Push-Up",
+        "aka": [
+          "Wall Press-Up",
+          "Standing Wall Push-Up",
+          "Wall Chest Press",
+          "Vertical Push-Up"
+        ],
+        "modality": "strength",
+        "movement_pattern": "push_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "core",
+          "wrist"
+        ],
+        "equipment": [
+          "wall"
+        ],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 12,
+        "rep_cap_seconds": 50,
+        "intensity": 1,
+        "cues": [
+          "Hold one straight line head to heels.",
+          "Lower your chest toward the wall.",
+          "Push the wall away.",
+          "Slow on the way in."
+        ],
+        "setup_note": "Stand about arm's length from a clear wall.",
+        "progression_hint": "Knee Push-Up",
+        "regression_hint": null,
+        "pairs_well_with_hints": [
+          "Wall Slide",
+          "Band Pull-Apart"
+        ],
+        "avoid_after_hints": [
+          "Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "push_h_wall_push_up",
+        "asset_tier": "still",
+        "asset_path": "catalog/push_h_wall_push_up/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Knee Push-Up",
+        "aka": [
+          "Modified Push-Up",
+          "Push-Up from Knees",
+          "Three-Quarter Push-Up",
+          "Kneeling Push-Up"
+        ],
+        "modality": "strength",
+        "movement_pattern": "push_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "core",
+          "wrist"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 45,
+        "intensity": 2,
+        "cues": [
+          "Hips in line with your shoulders.",
+          "Lower your chest between your hands.",
+          "Point elbows back, not out.",
+          "Push the floor away."
+        ],
+        "setup_note": "Kneel on a mat with hands under shoulders.",
+        "progression_hint": "Push-Up",
+        "regression_hint": "Wall Push-Up",
+        "pairs_well_with_hints": [
+          "Bird Dog",
+          "Glute Bridge"
+        ],
+        "avoid_after_hints": [
+          "Push-Up",
+          "Plyometric Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "push_h_knee_push_up",
+        "asset_tier": "still",
+        "asset_path": "catalog/push_h_knee_push_up/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Half-Kneeling Single-Arm Band Press",
+        "aka": [
+          "Half-Kneeling Band Chest Press",
+          "Kneeling Single-Arm Band Press",
+          "Half-Kneeling One-Arm Press",
+          "Split-Kneeling Band Press"
+        ],
+        "modality": "strength",
+        "movement_pattern": "push_h",
+        "primary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "secondary_regions": [
+          "elbow",
+          "hip"
+        ],
+        "equipment": [
+          "band",
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 50,
+        "intensity": 3,
+        "cues": [
+          "Press straight out from your chest.",
+          "Stay square to the front.",
+          "Ribs down.",
+          "Slow on the way back."
+        ],
+        "setup_note": "Anchor a band behind you at chest height and kneel on a mat.",
+        "progression_hint": "Standing Single-Arm Band Press",
+        "regression_hint": "Standing Band Chest Press",
+        "pairs_well_with_hints": [
+          "Half-Kneeling Band Row",
+          "Dead Bug"
+        ],
+        "avoid_after_hints": [
+          "Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "push_h_half_kneeling_single_arm_band_press",
+        "asset_tier": "still",
+        "asset_path": "catalog/push_h_half_kneeling_single_arm_band_press/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Push-Up",
+        "aka": [
+          "Full Push-Up",
+          "Press-Up",
+          "Standard Push-Up",
+          "Floor Push-Up"
+        ],
+        "modality": "strength",
+        "movement_pattern": "push_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow",
+          "core"
+        ],
+        "secondary_regions": [
+          "wrist",
+          "spine"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 45,
+        "intensity": 3,
+        "cues": [
+          "Hold one straight line.",
+          "Lower your chest to the floor.",
+          "Point elbows back at forty-five degrees.",
+          "Push the floor away."
+        ],
+        "setup_note": "Mat down, hands just wider than shoulders.",
+        "progression_hint": "Plyometric Push-Up",
+        "regression_hint": "Knee Push-Up",
+        "pairs_well_with_hints": [
+          "Half-Kneeling Band Row",
+          "Bodyweight Squat"
+        ],
+        "avoid_after_hints": [
+          "Plyometric Push-Up",
+          "Dumbbell Floor Press"
+        ]
+      },
+      "derived": {
+        "id": "push_h_push_up",
+        "asset_tier": "still",
+        "asset_path": "catalog/push_h_push_up/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Dumbbell Floor Press",
+        "aka": [
+          "DB Floor Press",
+          "Supine Dumbbell Press",
+          "Dumbbell Press from Floor",
+          "Lying Dumbbell Press"
+        ],
+        "modality": "strength",
+        "movement_pattern": "push_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "core",
+          "wrist"
+        ],
+        "equipment": [
+          "dumbbell",
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 8,
+        "rep_cap_seconds": 40,
+        "intensity": 4,
+        "cues": [
+          "Press the weights straight up.",
+          "Pause when your elbows touch down.",
+          "Ribs down.",
+          "Press feet into the floor."
+        ],
+        "setup_note": "Two dumbbells on the mat beside your hips.",
+        "progression_hint": "Single-Arm Dumbbell Floor Press",
+        "regression_hint": "Standing Band Chest Press",
+        "pairs_well_with_hints": [
+          "Glute Bridge",
+          "Half-Kneeling Band Row"
+        ],
+        "avoid_after_hints": [
+          "Push-Up",
+          "Plyometric Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "push_h_dumbbell_floor_press",
+        "asset_tier": "still",
+        "asset_path": "catalog/push_h_dumbbell_floor_press/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 40,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Plyometric Push-Up",
+        "aka": [
+          "Clapping Push-Up",
+          "Plyo Push-Up",
+          "Explosive Push-Up",
+          "Power Push-Up"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "push_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow",
+          "core"
+        ],
+        "secondary_regions": [
+          "wrist",
+          "spine"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 6,
+        "rep_cap_seconds": 35,
+        "intensity": 5,
+        "cues": [
+          "Push hard enough to leave the floor.",
+          "Land with soft elbows.",
+          "Hold one straight line.",
+          "Reset before the next rep."
+        ],
+        "setup_note": "Mat down, hands under shoulders, space clear in front.",
+        "progression_hint": null,
+        "regression_hint": "Push-Up",
+        "pairs_well_with_hints": [
+          "Squat Jump",
+          "Child's Pose"
+        ],
+        "avoid_after_hints": [
+          "Push-Up",
+          "Dumbbell Floor Press"
+        ]
+      },
+      "derived": {
+        "id": "push_h_plyometric_push_up",
+        "asset_tier": "still",
+        "asset_path": "catalog/push_h_plyometric_push_up/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 35,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "push_h_push_up"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "category": "pull_h",
+  "generatedAt": "2026-09-07T15:33:59.162Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Prone Y-T-W Raise",
+        "aka": [
+          "Y-T-W Raise",
+          "Prone Scapular Series",
+          "Floor Y-T-W",
+          "Prone Scapular Retraction"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "spine",
+          "neck"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 8,
+        "rep_cap_seconds": 50,
+        "intensity": 2,
+        "cues": [
+          "Slide shoulder blades down.",
+          "Lift the arms, not the chin.",
+          "Thumbs point to the ceiling.",
+          "Lower slowly."
+        ],
+        "setup_note": "Lie face down on a mat with room to reach overhead.",
+        "progression_hint": "Prone Dumbbell Row",
+        "regression_hint": "Wall Slide",
+        "pairs_well_with_hints": [
+          "Push-Up",
+          "Sphinx Pose"
+        ],
+        "avoid_after_hints": [
+          "Bent-Over Dumbbell Row"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_prone_y_t_w_raise",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_prone_y_t_w_raise/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Chair-Supported Single-Arm Dumbbell Row",
+        "aka": [
+          "One-Arm Dumbbell Row",
+          "Single-Arm Row",
+          "Supported DB Row",
+          "Bench-Supported Row"
+        ],
+        "modality": "strength",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "spine",
+          "core",
+          "hip"
+        ],
+        "equipment": [
+          "dumbbell",
+          "chair"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 45,
+        "intensity": 3,
+        "cues": [
+          "Drive the elbow past your ribs.",
+          "Keep the chest level.",
+          "Lower the weight all the way.",
+          "Hips stay square."
+        ],
+        "setup_note": "Set a stable chair beside you with one dumbbell on the floor.",
+        "progression_hint": "Renegade Row",
+        "regression_hint": "Seated Band Row",
+        "pairs_well_with_hints": [
+          "Standing Dumbbell Overhead Press",
+          "Romanian Deadlift"
+        ],
+        "avoid_after_hints": [
+          "Bent-Over Dumbbell Row"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_chair_supported_single_arm_dumbbell_row",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_chair_supported_single_arm_dumbbell_row/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Seated Band Row",
+        "aka": [
+          "Seated Resistance Band Row",
+          "Long-Sitting Band Row",
+          "Band Seated Row",
+          "Floor Band Row"
+        ],
+        "modality": "strength",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder",
+          "elbow"
+        ],
+        "secondary_regions": [
+          "spine",
+          "core"
+        ],
+        "equipment": [
+          "band",
+          "mat"
+        ],
+        "body_position": "seated",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 12,
+        "rep_cap_seconds": 50,
+        "intensity": 2,
+        "cues": [
+          "Pull the handles to your ribs.",
+          "Sit tall through the crown.",
+          "Squeeze the shoulder blades.",
+          "Resist on the way out."
+        ],
+        "setup_note": "Sit on a mat with legs long and a band looped around both feet.",
+        "progression_hint": "Chair-Supported Single-Arm Dumbbell Row",
+        "regression_hint": "Prone Y-T-W Raise",
+        "pairs_well_with_hints": [
+          "Banded Shoulder Pass-Through",
+          "Child's Pose"
+        ],
+        "avoid_after_hints": [
+          "Renegade Row"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_seated_band_row",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_seated_band_row/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Bent-Over Dumbbell Row",
+        "aka": [
+          "Two-Arm Dumbbell Row",
+          "DB Bent-Over Row",
+          "Bent-Over Row",
+          "Double Dumbbell Row"
+        ],
+        "modality": "strength",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder",
+          "spine"
+        ],
+        "secondary_regions": [
+          "elbow",
+          "core",
+          "hip"
+        ],
+        "equipment": [
+          "dumbbell"
+        ],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 45,
+        "intensity": 4,
+        "cues": [
+          "Hinge until the chest faces down.",
+          "Row to the bottom ribs.",
+          "Ribs down.",
+          "Control the weight down."
+        ],
+        "setup_note": "Two dumbbells on the floor in front of your feet.",
+        "progression_hint": "Kettlebell Bent-Over Row",
+        "regression_hint": "Chair-Supported Single-Arm Dumbbell Row",
+        "pairs_well_with_hints": [
+          "Goblet Squat",
+          "Push-Up"
+        ],
+        "avoid_after_hints": [
+          "Romanian Deadlift",
+          "Kettlebell Swing"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_bent_over_dumbbell_row",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_bent_over_dumbbell_row/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Renegade Row",
+        "aka": [
+          "Plank Row",
+          "Push-Up Position Row",
+          "Dumbbell Renegade Row",
+          "Kettlebell Renegade Row"
+        ],
+        "modality": "strength",
+        "movement_pattern": "pull_h",
+        "primary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "secondary_regions": [
+          "elbow",
+          "spine",
+          "wrist"
+        ],
+        "equipment": [
+          "dumbbell",
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 6,
+        "rep_cap_seconds": 50,
+        "intensity": 5,
+        "cues": [
+          "Widen the feet for a base.",
+          "Row one elbow to the hip.",
+          "Keep the hips still.",
+          "Press hard through the down hand."
+        ],
+        "setup_note": "Two hex dumbbells set shoulder-width on a mat.",
+        "progression_hint": null,
+        "regression_hint": "Chair-Supported Single-Arm Dumbbell Row",
+        "pairs_well_with_hints": [
+          "Goblet Squat",
+          "Dumbbell Reverse Lunge"
+        ],
+        "avoid_after_hints": [
+          "Push-Up",
+          "Plyometric Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "pull_h_renegade_row",
+        "asset_tier": "still",
+        "asset_path": "catalog/pull_h_renegade_row/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

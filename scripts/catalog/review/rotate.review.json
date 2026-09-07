@@ -1,0 +1,402 @@
+{
+  "category": "rotate",
+  "generatedAt": "2026-09-07T15:35:52.659Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Thread the Needle",
+        "aka": [
+          "Threading the Needle",
+          "Parsva Balasana",
+          "Revolved Child's Pose",
+          "Quadruped Thoracic Reach-Through"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "neck"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": true,
+        "timing_type": "hold_per_side",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 1,
+        "cues": [
+          "Slide the arm far under you.",
+          "Let the shoulder rest down.",
+          "Breathe into the upper back."
+        ],
+        "setup_note": "Mat down, start on hands and knees.",
+        "progression_hint": "Quadruped Thoracic Rotation with Hand Behind Head",
+        "regression_hint": "Seated Thoracic Rotation",
+        "pairs_well_with_hints": [
+          "Child's Pose",
+          "Cat-Cow"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "rotate_thread_the_needle",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_thread_the_needle/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Side-Lying Open Book",
+        "aka": [
+          "Open Book",
+          "Open Books",
+          "Side-Lying Thoracic Rotation",
+          "Book Openers",
+          "Side-Lying Windmill"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "hip"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": true,
+        "timing_type": "breaths",
+        "default_dose": 6,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Open the top arm slowly.",
+          "Keep the knees stacked and still.",
+          "Follow your hand with your eyes.",
+          "Exhale as you open."
+        ],
+        "setup_note": "Lie on one side with knees bent and stacked, arms together in front.",
+        "progression_hint": "Seated Thoracic Rotation",
+        "regression_hint": "Supine Spinal Twist",
+        "pairs_well_with_hints": [
+          "Cat-Cow",
+          "Supine Overhead Reach"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "rotate_side_lying_open_book",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_side_lying_open_book/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Keep the knees stacked and still.\""
+        }
+      ],
+      "slotPeers": [
+        "rotate_supine_spinal_twist"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Seated Thoracic Rotation",
+        "aka": [
+          "Seated Trunk Rotation",
+          "Cross-Legged Thoracic Rotation",
+          "Seated Spinal Twist Drill",
+          "Long-Sitting Thoracic Rotation"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "hip"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "seated",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 8,
+        "rep_cap_seconds": 40,
+        "intensity": 2,
+        "cues": [
+          "Sit tall first.",
+          "Turn from the ribs.",
+          "Keep the hips facing forward.",
+          "Pause at the end range."
+        ],
+        "setup_note": "Sit cross-legged or long-sitting on the mat with hands at your chest.",
+        "progression_hint": "Half-Kneeling Band Chop",
+        "regression_hint": "Side-Lying Open Book",
+        "pairs_well_with_hints": [
+          "Thread the Needle",
+          "Wall Slide"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "rotate_seated_thoracic_rotation",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_seated_thoracic_rotation/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 40,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Half-Kneeling Band Chop",
+        "aka": [
+          "Kneeling Band Chop",
+          "High-to-Low Band Chop",
+          "Half-Kneeling Chop",
+          "Banded Chop"
+        ],
+        "modality": "strength",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "core",
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "hip"
+        ],
+        "equipment": [
+          "band",
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 10,
+        "rep_cap_seconds": 45,
+        "intensity": 3,
+        "cues": [
+          "Pull with the near hand, press with the far.",
+          "Finish the chop past your hip.",
+          "Keep the hips square.",
+          "Slow on the way back."
+        ],
+        "setup_note": "Anchor the band above shoulder height and half-kneel side-on to it.",
+        "progression_hint": "Standing Band Rotational Punch",
+        "regression_hint": "Seated Thoracic Rotation",
+        "pairs_well_with_hints": [
+          "Half-Kneeling Single-Arm Band Press",
+          "Glute Bridge"
+        ],
+        "avoid_after_hints": [
+          "Standing Band Rotational Punch"
+        ]
+      },
+      "derived": {
+        "id": "rotate_half_kneeling_band_chop",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_half_kneeling_band_chop/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 45,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_too_long",
+          "message": "9 words: \"Pull with the near hand, press with the far.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Standing Band Rotational Punch",
+        "aka": [
+          "Band Rotational Press",
+          "Banded Punch",
+          "Standing Band Rotation Punch",
+          "Band Horizontal Punch"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "core",
+          "spine"
+        ],
+        "secondary_regions": [
+          "hip",
+          "shoulder"
+        ],
+        "equipment": [
+          "band"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 12,
+        "rep_cap_seconds": 50,
+        "intensity": 4,
+        "cues": [
+          "Turn the back foot as you punch.",
+          "Drive the rotation from the hip.",
+          "Punch straight out at chest height.",
+          "Return under control."
+        ],
+        "setup_note": "Anchor the band at chest height and stand side-on, band in the far hand.",
+        "progression_hint": "Kettlebell Windmill",
+        "regression_hint": "Half-Kneeling Band Chop",
+        "pairs_well_with_hints": [
+          "Kettlebell Swing",
+          "Squat Jump"
+        ],
+        "avoid_after_hints": [
+          "Half-Kneeling Band Chop"
+        ]
+      },
+      "derived": {
+        "id": "rotate_standing_band_rotational_punch",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_standing_band_rotational_punch/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 50,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Kettlebell Windmill",
+        "aka": [
+          "KB Windmill",
+          "Overhead Windmill",
+          "Windmill",
+          "Single-Arm Kettlebell Windmill"
+        ],
+        "modality": "strength",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "hip",
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "equipment": [
+          "kettlebell"
+        ],
+        "body_position": "standing",
+        "unilateral": true,
+        "timing_type": "reps",
+        "default_dose": 5,
+        "rep_cap_seconds": 40,
+        "intensity": 5,
+        "cues": [
+          "Push the hip back and out.",
+          "Keep your eyes on the bell.",
+          "Lock the top elbow straight.",
+          "Stand up by driving the hip forward."
+        ],
+        "setup_note": "One kettlebell pressed overhead, feet wider than hips and turned out slightly.",
+        "progression_hint": "Double Kettlebell Windmill",
+        "regression_hint": "Bodyweight Windmill",
+        "pairs_well_with_hints": [
+          "Get-Up Roll to Elbow",
+          "Deep Squat Hold"
+        ],
+        "avoid_after_hints": [
+          "Standing Dumbbell Overhead Press",
+          "Kettlebell Push Press"
+        ]
+      },
+      "derived": {
+        "id": "rotate_kettlebell_windmill",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_kettlebell_windmill/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": 40,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Push the hip back and out.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

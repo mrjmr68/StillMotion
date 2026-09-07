@@ -1,0 +1,499 @@
+{
+  "category": "breath_yoga",
+  "generatedAt": "2026-09-07T15:27:35.620Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Diaphragmatic Breathing",
+        "aka": [
+          "Belly Breathing",
+          "Supine Diaphragmatic Breathing",
+          "Abdominal Breathing",
+          "360 Breathing"
+        ],
+        "modality": "breath",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core"
+        ],
+        "secondary_regions": [
+          "spine"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": false,
+        "timing_type": "breaths",
+        "default_dose": 8,
+        "rep_cap_seconds": null,
+        "intensity": 1,
+        "cues": [
+          "Breathe in through your nose.",
+          "Let the belly rise first.",
+          "Exhale longer than you inhale."
+        ],
+        "setup_note": "Lie on your back on a mat, knees bent, one hand on the belly.",
+        "progression_hint": "Box Breathing",
+        "regression_hint": null,
+        "pairs_well_with_hints": [
+          "Supine Spinal Twist",
+          "Child's Pose"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "anti_rotate_diaphragmatic_breathing",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_diaphragmatic_breathing/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Box Breathing",
+        "aka": [
+          "Square Breathing",
+          "Four-Count Breathing",
+          "Tactical Breathing"
+        ],
+        "modality": "breath",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core"
+        ],
+        "secondary_regions": [
+          "neck"
+        ],
+        "equipment": [],
+        "body_position": "seated",
+        "unilateral": false,
+        "timing_type": "breaths",
+        "default_dose": 8,
+        "rep_cap_seconds": null,
+        "intensity": 1,
+        "cues": [
+          "Inhale four counts.",
+          "Hold four counts.",
+          "Exhale four counts.",
+          "Sit tall through the crown."
+        ],
+        "setup_note": "Sit upright on the floor or a chair.",
+        "progression_hint": null,
+        "regression_hint": "Diaphragmatic Breathing",
+        "pairs_well_with_hints": [
+          "Diaphragmatic Breathing"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "anti_rotate_box_breathing",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_box_breathing/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Quadruped Belly Breathing",
+        "aka": [
+          "All-Fours Breathing",
+          "Quadruped Diaphragmatic Breathing",
+          "Hands-and-Knees Breathing"
+        ],
+        "modality": "breath",
+        "movement_pattern": "anti_rotate",
+        "primary_regions": [
+          "core"
+        ],
+        "secondary_regions": [
+          "spine",
+          "shoulder"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "breaths",
+        "default_dose": 6,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Push the floor away lightly.",
+          "Fill the ribs sideways.",
+          "Blow all the air out.",
+          "Keep the back flat."
+        ],
+        "setup_note": "Kneel on a mat with hands under shoulders, knees under hips.",
+        "progression_hint": "Bird Dog",
+        "regression_hint": "Diaphragmatic Breathing",
+        "pairs_well_with_hints": [
+          "Cat-Cow",
+          "Child's Pose"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "anti_rotate_quadruped_belly_breathing",
+        "asset_tier": "still",
+        "asset_path": "catalog/anti_rotate_quadruped_belly_breathing/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Child's Pose",
+        "aka": [
+          "Child Pose",
+          "Balasana",
+          "Resting Pose"
+        ],
+        "modality": "yoga",
+        "movement_pattern": "hinge",
+        "primary_regions": [
+          "hip",
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "knee"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 60,
+        "rep_cap_seconds": null,
+        "intensity": 1,
+        "cues": [
+          "Sink the hips toward the heels.",
+          "Reach the hands long.",
+          "Breathe into your back."
+        ],
+        "setup_note": "Kneel on a mat with knees wide, big toes together.",
+        "progression_hint": "Extended Puppy Pose",
+        "regression_hint": null,
+        "pairs_well_with_hints": [
+          "Cat-Cow",
+          "Diaphragmatic Breathing"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "hinge_child_s_pose",
+        "asset_tier": "still",
+        "asset_path": "catalog/hinge_child_s_pose/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "hinge_tall_kneeling_hip_hinge"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Downward-Facing Dog",
+        "aka": [
+          "Downward Dog",
+          "Down Dog",
+          "Adho Mukha Svanasana"
+        ],
+        "modality": "yoga",
+        "movement_pattern": "hinge",
+        "primary_regions": [
+          "hip",
+          "shoulder"
+        ],
+        "secondary_regions": [
+          "ankle",
+          "spine",
+          "core"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 45,
+        "rep_cap_seconds": null,
+        "intensity": 3,
+        "cues": [
+          "Lift the hips high.",
+          "Press the floor away.",
+          "Soften the knees.",
+          "Let the heels drift down."
+        ],
+        "setup_note": "Start on hands and knees on a mat.",
+        "progression_hint": "Three-Legged Downward Dog",
+        "regression_hint": "Child's Pose",
+        "pairs_well_with_hints": [
+          "Low Lunge",
+          "Child's Pose"
+        ],
+        "avoid_after_hints": [
+          "Wall Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "hinge_downward_facing_dog",
+        "asset_tier": "still",
+        "asset_path": "catalog/hinge_downward_facing_dog/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Low Lunge",
+        "aka": [
+          "Anjaneyasana",
+          "Crescent Low Lunge",
+          "Kneeling Lunge Stretch"
+        ],
+        "modality": "yoga",
+        "movement_pattern": "hinge",
+        "primary_regions": [
+          "hip"
+        ],
+        "secondary_regions": [
+          "spine",
+          "knee"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "kneeling",
+        "unilateral": true,
+        "timing_type": "hold_per_side",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Tuck the tailbone under.",
+          "Glide the hips forward.",
+          "Lift the chest tall.",
+          "Breathe into the front hip."
+        ],
+        "setup_note": "Kneel on a mat with one foot forward, back knee padded.",
+        "progression_hint": "Crescent Lunge",
+        "regression_hint": "Half-Kneeling Hip Flexor Stretch",
+        "pairs_well_with_hints": [
+          "Downward-Facing Dog",
+          "Thread the Needle"
+        ],
+        "avoid_after_hints": [
+          "Walking Lunge"
+        ]
+      },
+      "derived": {
+        "id": "hinge_low_lunge",
+        "asset_tier": "still",
+        "asset_path": "catalog/hinge_low_lunge/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Sphinx Pose",
+        "aka": [
+          "Salamba Bhujangasana",
+          "Forearm Cobra",
+          "Prone Propped Extension"
+        ],
+        "modality": "mobility",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "spine"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "hip"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "prone",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 45,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Press the forearms down.",
+          "Lengthen the chest forward.",
+          "Let the hips stay heavy.",
+          "Soften the jaw."
+        ],
+        "setup_note": "Lie face down on a mat with elbows under shoulders.",
+        "progression_hint": "Cobra Pose",
+        "regression_hint": "Prone Belly Breathing",
+        "pairs_well_with_hints": [
+          "Child's Pose",
+          "Cat-Cow"
+        ],
+        "avoid_after_hints": [
+          "Superman Hold"
+        ]
+      },
+      "derived": {
+        "id": "rotate_sphinx_pose",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_sphinx_pose/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Supine Spinal Twist",
+        "aka": [
+          "Supta Matsyendrasana",
+          "Reclined Twist",
+          "Lying Spinal Twist"
+        ],
+        "modality": "yoga",
+        "movement_pattern": "rotate",
+        "primary_regions": [
+          "spine",
+          "hip"
+        ],
+        "secondary_regions": [
+          "shoulder",
+          "core"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": true,
+        "timing_type": "hold_per_side",
+        "default_dose": 40,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Let the knees fall across.",
+          "Keep both shoulders heavy.",
+          "Turn the gaze the other way.",
+          "Exhale and settle deeper."
+        ],
+        "setup_note": "Lie on your back on a mat with knees bent.",
+        "progression_hint": "Thread the Needle",
+        "regression_hint": "Supine Windshield Wipers",
+        "pairs_well_with_hints": [
+          "Diaphragmatic Breathing",
+          "Child's Pose"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "rotate_supine_spinal_twist",
+        "asset_tier": "still",
+        "asset_path": "catalog/rotate_supine_spinal_twist/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Exhale and settle deeper.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}

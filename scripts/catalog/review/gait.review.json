@@ -1,0 +1,338 @@
+{
+  "category": "gait",
+  "generatedAt": "2026-09-07T15:38:22.011Z",
+  "model": "claude-opus-5",
+  "promptVersion": 2,
+  "entries": [
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Marching in Place",
+        "aka": [
+          "March in Place",
+          "Stationary March",
+          "Standing March",
+          "In-Place Marching"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "gait",
+        "primary_regions": [
+          "hip"
+        ],
+        "secondary_regions": [
+          "knee",
+          "ankle",
+          "core"
+        ],
+        "equipment": [],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 60,
+        "rep_cap_seconds": null,
+        "intensity": 1,
+        "cues": [
+          "Drive one knee up.",
+          "Swing the opposite arm.",
+          "Stand tall through the top of your head."
+        ],
+        "setup_note": null,
+        "progression_hint": "High Knee Run in Place",
+        "regression_hint": "Seated March",
+        "pairs_well_with_hints": [
+          "Bodyweight Squat",
+          "Lateral Shuffle"
+        ],
+        "avoid_after_hints": []
+      },
+      "derived": {
+        "id": "gait_marching_in_place",
+        "asset_tier": "still",
+        "asset_path": "catalog/gait_marching_in_place/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "High Knee Run in Place",
+        "aka": [
+          "High Knees",
+          "Stationary High Knee Run",
+          "Running in Place with High Knees",
+          "High Knee Drill"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "gait",
+        "primary_regions": [
+          "hip",
+          "ankle"
+        ],
+        "secondary_regions": [
+          "knee",
+          "core"
+        ],
+        "equipment": [],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 30,
+        "rep_cap_seconds": null,
+        "intensity": 5,
+        "cues": [
+          "Knees to hip height.",
+          "Quick feet.",
+          "Pump your arms.",
+          "Stay light on your feet."
+        ],
+        "setup_note": null,
+        "progression_hint": null,
+        "regression_hint": "Marching in Place",
+        "pairs_well_with_hints": [
+          "Bodyweight Squat",
+          "Deep Squat Hold"
+        ],
+        "avoid_after_hints": [
+          "Squat Jump",
+          "Split Squat Jump"
+        ]
+      },
+      "derived": {
+        "id": "gait_high_knee_run_in_place",
+        "asset_tier": "still",
+        "asset_path": "catalog/gait_high_knee_run_in_place/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "gait_marching_in_place"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "needs-review",
+      "draft": {
+        "name": "Lateral Shuffle",
+        "aka": [
+          "Side Shuffle",
+          "Lateral Shuttle Steps",
+          "Side-to-Side Shuffle",
+          "Shuffle Steps"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "gait",
+        "primary_regions": [
+          "hip",
+          "ankle"
+        ],
+        "secondary_regions": [
+          "knee",
+          "core"
+        ],
+        "equipment": [],
+        "body_position": "standing",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 40,
+        "rep_cap_seconds": null,
+        "intensity": 4,
+        "cues": [
+          "Stay low in your stance.",
+          "Push off the outside foot.",
+          "Keep your chest facing forward."
+        ],
+        "setup_note": "Clear three or four steps of floor either side.",
+        "progression_hint": "Lateral Skater Bound",
+        "regression_hint": "Lateral Step-Out",
+        "pairs_well_with_hints": [
+          "Cossack Squat",
+          "Marching in Place"
+        ],
+        "avoid_after_hints": [
+          "Split Squat Jump"
+        ]
+      },
+      "derived": {
+        "id": "gait_lateral_shuffle",
+        "asset_tier": "still",
+        "asset_path": "catalog/gait_lateral_shuffle/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [],
+      "slotPeers": [
+        "gait_marching_in_place",
+        "gait_high_knee_run_in_place"
+      ],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Baby Crawl",
+        "aka": [
+          "Knees-Down Crawl",
+          "Quadruped Baby Crawl",
+          "Cross Crawl on Hands and Knees",
+          "Toddler Crawl"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "gait",
+        "primary_regions": [
+          "shoulder",
+          "hip",
+          "core"
+        ],
+        "secondary_regions": [
+          "knee",
+          "wrist"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "quadruped",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 45,
+        "rep_cap_seconds": null,
+        "intensity": 2,
+        "cues": [
+          "Move opposite hand and knee.",
+          "Keep your back flat.",
+          "Travel slowly.",
+          "Look just ahead of your hands."
+        ],
+        "setup_note": "Clear a few feet of floor ahead and behind the mat.",
+        "progression_hint": "Bear Crawl",
+        "regression_hint": "Quadruped Rock Back",
+        "pairs_well_with_hints": [
+          "Bird Dog",
+          "Thread the Needle"
+        ],
+        "avoid_after_hints": [
+          "Bear Crawl",
+          "Push-Up"
+        ]
+      },
+      "derived": {
+        "id": "gait_baby_crawl",
+        "asset_tier": "still",
+        "asset_path": "catalog/gait_baby_crawl/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Move opposite hand and knee.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    },
+    {
+      "status": "pending",
+      "draft": {
+        "name": "Crab Walk",
+        "aka": [
+          "Crab Crawl",
+          "Reverse Crawl",
+          "Table Top Crawl",
+          "Backward Crab Walk"
+        ],
+        "modality": "capacity",
+        "movement_pattern": "gait",
+        "primary_regions": [
+          "shoulder",
+          "hip"
+        ],
+        "secondary_regions": [
+          "core",
+          "wrist",
+          "knee"
+        ],
+        "equipment": [
+          "mat"
+        ],
+        "body_position": "supine",
+        "unilateral": false,
+        "timing_type": "duration",
+        "default_dose": 40,
+        "rep_cap_seconds": null,
+        "intensity": 3,
+        "cues": [
+          "Keep your hips lifted.",
+          "Step opposite hand and foot.",
+          "Open your chest to the ceiling.",
+          "Breathe steadily."
+        ],
+        "setup_note": "Sit on the mat with hands behind your hips, fingers pointing back.",
+        "progression_hint": "Bear Crawl",
+        "regression_hint": "Glute Bridge",
+        "pairs_well_with_hints": [
+          "Glute Bridge",
+          "Marching in Place"
+        ],
+        "avoid_after_hints": [
+          "Bear Crawl",
+          "Renegade Row"
+        ]
+      },
+      "derived": {
+        "id": "gait_crab_walk",
+        "asset_tier": "still",
+        "asset_path": "catalog/gait_crab_walk/still.svg",
+        "loop_seconds": null,
+        "rep_cap_seconds": null,
+        "is_anchor": false
+      },
+      "idOverride": null,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "cue_two_ideas",
+          "message": "possibly two ideas: \"Step opposite hand and foot.\""
+        }
+      ],
+      "slotPeers": [],
+      "dupOf": null,
+      "reviewerNote": "",
+      "approvedHash": null,
+      "approvedAt": null,
+      "importedAt": null
+    }
+  ]
+}
