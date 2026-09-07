@@ -28,6 +28,17 @@ export type Category = {
   /** Modalities to favor, when the batch is modality-led rather than pattern-led. */
   modalities?: Modality[];
   allowedEquipment: Equipment[];
+  /**
+   * Movements this batch must not omit, by name.
+   *
+   * Left to the owner to fill in — these are movement-science judgments about
+   * which movements are non-negotiable in a category, not something to guess at.
+   * The one seeded entry below came from an observed gap: the first hinge batch
+   * skipped the plain Romanian Deadlift while three of its own entries named it
+   * as a progression or regression, and hinge is the only batch that would ever
+   * draft it.
+   */
+  mustInclude?: string[];
   brief: string;
 };
 
@@ -67,6 +78,7 @@ export const CATEGORIES: Category[] = [
     targetCount: 8,
     patterns: ['hinge'],
     allowedEquipment: ['kettlebell', 'dumbbell', 'mat', 'wall', 'band'],
+    mustInclude: ['Romanian Deadlift'],
     brief: [
       'Hip-dominant flexion and extension with a neutral spine: deadlift variants, RDLs,',
       'good mornings, hip bridges, swings, and hinge-pattern teaching drills against a wall.',

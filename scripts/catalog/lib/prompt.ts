@@ -28,7 +28,7 @@ import {
 } from '../../../src/lib/catalog/vocab';
 import type { Category } from '../categories';
 
-export const PROMPT_VERSION = 1;
+export const PROMPT_VERSION = 2;
 
 const list = (values: readonly string[]) => values.join(', ');
 
@@ -88,10 +88,18 @@ ${TIMING_TYPES.map((t) => `    ${t.padEnd(14)} ${DOSE_BANDS[t].min}-${DOSE_BANDS
   sentence. Null when nothing is needed.
 - progression_hint / regression_hint — the NAME of a harder / easier movement,
   as a plain string, or null. Do not invent ids. Naming a movement that is not
-  in this batch is fine and expected.
+  in this batch is fine and expected — the catalog is built in batches and these
+  resolve later across all of them.
+  BUT every movement you name in a hint must be performable with the equipment
+  vocabulary above. There is no barbell, no bench, no pull-up bar, no machine,
+  no cable, no box, and no medicine ball in this system. "Barbell Hip Thrust" or
+  "Lat Pulldown" can never resolve to a real entry, so naming one throws the
+  relationship away. If the natural progression needs equipment that does not
+  exist here, name the closest achievable movement instead, or use null.
 - pairs_well_with_hints / avoid_after_hints — NAMES of movements that sequence
   well after this one, or that this one should not directly follow (usually
-  because they fatigue the same tissue). Empty arrays are fine.
+  because they fatigue the same tissue). Same equipment rule applies. Empty
+  arrays are fine.
 
 ## Coaching cues
 
@@ -101,6 +109,9 @@ while the user is moving, so they must be instantly parseable:
 - Under ${CUE_MAX_WORDS} words. Imperative. Exactly one idea per cue.
 - Say what to DO, not what to avoid, wherever possible.
 - No anatomy lecture, no rep counting, no motivational filler.
+- Cues describe EXECUTION, never setup. How to arrange equipment or get into
+  position belongs in setup_note — the cues are read while already moving, so a
+  cue spent on setup is one of only a few lines wasted.
 
 Good:  "Ribs down." / "Push the floor away." / "Slow on the way back."
 Bad:   "Keep your ribs down and brace your core." (two ideas)
@@ -180,6 +191,11 @@ export function buildUserPrompt(options: {
       ? `\n## Already in the catalog — do NOT draft these or any synonym of them\n\n${digest.map((line) => `- ${line}`).join('\n')}\n`
       : '';
 
+  const mustInclude =
+    category.mustInclude && category.mustInclude.length > 0
+      ? `\nThis batch must include these movements — they are canonical for the category and other entries will reference them:\n${category.mustInclude.map((name) => `- ${name}`).join('\n')}\n`
+      : '';
+
   return `Draft ${count} entries for the "${category.label}" batch.
 
 ${category.brief}
@@ -187,6 +203,7 @@ ${category.brief}
 ${patterns}
 ${modalities}
 ${equipment}
+${mustInclude}
 
 Spread the batch across body positions and across the intensity range. Entries
 should be meaningfully different from each other — two movements that share a
