@@ -431,3 +431,22 @@ than answered, so it has to survive a reload. But a rating prompt for Tuesday's
 session is not a prompt, it is an obstacle between you and today's check-in — and
 a rating given days late is worse data than no rating, which is also why Skip is a
 real, equally-weighted answer rather than a dismissal.
+
+**The magic link comes back to whichever device asked for it.** A fixed
+`NEXT_PUBLIC_SITE_URL` cannot be right for a two-screen app developed on a LAN:
+set to `http://localhost:3000`, a link requested on the PHONE points the phone at
+itself. The failure is completely silent from the server's side — the request
+never arrives, so the log shows a `POST /login` and then nothing at all, which is
+exactly how it presented. The origin is now derived from the request's Host
+header, trusted only for loopback and RFC1918 addresses (a forged Host is how
+host-header injection works, and Supabase's redirect allow-list is a second gate
+behind that). Pulled out as a pure function precisely because the failure mode is
+invisible: `console:check` asserts eleven host cases, including that `172.32.x` is
+public even though `172.16-31.x` is private — the one a lazy `172.` prefix match
+gets wrong.
+
+**`allowedDevOrigins` includes the LAN address.** Next's dev server refuses to
+serve its own chunks and the HMR socket to an unrecognised origin, so loading the
+console from the phone produced a rendered shell with every interaction dead —
+which looks like broken application code and isn't. Development only; `next
+build` is unaffected.

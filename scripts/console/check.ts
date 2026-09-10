@@ -27,6 +27,7 @@ import {
   type CheckinRequest,
 } from '../../src/lib/console/checkin';
 import { mirrorView, tickedSeconds } from '../../src/lib/console/mirror';
+import { magicLinkOrigin } from '../../src/lib/console/origin';
 import { buildSession } from '../../src/lib/planner';
 import { CheckinSchema, type Checkin } from '../../src/lib/planner/schema';
 import {
@@ -327,8 +328,68 @@ function checkTicking(): void {
   console.log(`  ${green('ok')}   5 interpolation fixtures`);
 }
 
+/* ------------------------------------------------------------------ *
+ * 4. The magic-link origin
+ * ------------------------------------------------------------------ */
+
+function checkOrigin(): void {
+  console.log(bold('\nMagic-link origin'));
+  const configured = 'http://localhost:3000';
+
+  const cases: { host: string | null; proto: string | null; expect: string; why: string }[] = [
+    {
+      host: '192.168.0.13:3000',
+      proto: null,
+      expect: 'http://192.168.0.13:3000',
+      why: 'a link asked for on the phone must come back to this machine, not the phone',
+    },
+    { host: 'localhost:3000', proto: null, expect: 'http://localhost:3000', why: 'loopback is itself' },
+    { host: '127.0.0.1:3000', proto: null, expect: 'http://127.0.0.1:3000', why: 'loopback by address' },
+    { host: '10.0.0.7:3000', proto: null, expect: 'http://10.0.0.7:3000', why: '10/8 is private' },
+    { host: '172.16.4.2:3000', proto: null, expect: 'http://172.16.4.2:3000', why: '172.16/12 is private' },
+    { host: '172.31.4.2:3000', proto: null, expect: 'http://172.31.4.2:3000', why: 'top of the 172 range' },
+    {
+      host: '172.32.4.2:3000',
+      proto: null,
+      expect: configured,
+      why: '172.32 is PUBLIC — a lazy prefix match would trust it',
+    },
+    {
+      host: 'evil.example.com',
+      proto: null,
+      expect: configured,
+      why: 'a forged Host must not steer where the sign-in link points',
+    },
+    {
+      host: '192.168.0.13.evil.com',
+      proto: null,
+      expect: configured,
+      why: 'a private address as a subdomain prefix is not a private address',
+    },
+    { host: null, proto: null, expect: configured, why: 'no Host at all falls back' },
+    {
+      host: '192.168.0.13:3000',
+      proto: 'https',
+      expect: 'https://192.168.0.13:3000',
+      why: 'a proxied https origin is preserved',
+    },
+  ];
+
+  for (const testCase of cases) {
+    const actual = magicLinkOrigin(testCase.host, testCase.proto, configured);
+    expect(
+      `${testCase.host ?? '(no host)'} — ${testCase.why}`,
+      actual === testCase.expect,
+      `got ${actual}, wanted ${testCase.expect}`,
+    );
+  }
+
+  console.log(`  ${green('ok')}   ${cases.length} host cases · private trusted, public refused`);
+}
+
 async function main() {
   checkCheckin();
+  checkOrigin();
   checkTicking();
 
   const catalog = await fetchCatalog();
