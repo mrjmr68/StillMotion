@@ -91,7 +91,66 @@ with nothing but a floor.
 
 ---
 
-## 4. `swap` is accepted and ignored
+## 4. There is no artwork at all
+
+**Severity: high — it is the biggest hole in the product, and it is work, not a bug.**
+
+The `assets` bucket is empty. Every one of the 91 catalog rows points at
+`catalog/{id}/still.svg` and not one file exists, so `resolveAsset()` returns null
+by design (a URL that 404s would give the renderer a broken image instead of a
+deliberate placeholder) and `Figure` shows the body position as text.
+
+The plumbing is finished and was built for this: `Figure` branches on
+`asset_url`/`asset_kind` and never on `asset_tier`, the box the art will occupy is
+already reserved at the right size so the ten-foot composition will not shift the
+day it arrives, and the bucket is public so the unauthenticated TV needs no signing
+round-trip. Dropping art in is an upload.
+
+What is missing is the art itself, and the decision about what it should be:
+
+- **Tier 0, line-drawing stills.** One SVG per movement. Cheapest, and the box is
+  already sized for it. Generating 91 anatomically-legible exercise drawings
+  programmatically is the risky part — form is exactly what a wrong drawing gets
+  wrong, and a wrong drawing on a ten-foot screen teaches the wrong thing.
+- **Tier 1, pose cycles.** Two or three stills per movement, cross-faded. Much more
+  legible for anything with a start and end position, which is most of them.
+- **Tier 2, short video loops.** What spec §8 actually asks for. Filming 91 of them
+  is real work but produces the only version that teaches unfamiliar movements
+  without words.
+- **Interim, and worth considering on its own merits:** the placeholder could carry
+  more than `body_position` — the setup note, a start/end description — and be
+  genuinely useful rather than obviously absent.
+
+Until this lands, the stage teaches movements you already know and names movements
+you don't.
+
+---
+
+## 5. Ending early records the whole session as performed
+
+**Severity: high — it writes false history.**
+
+Observed: `end` pressed 59 seconds into a 25-minute session wrote 32 `exercise_logs`
+rows, every one at full prescribed dose with `was_skipped` false — including two
+entire blocks that were never reached.
+
+`buildPerformed` only distinguishes items in `run.skipped`, which holds explicit
+`skip` commands. Anything the clock never arrived at is indistinguishable from
+something completed. The unilateral grain is correct (one plan item writing left and
+right rows), so the shape of the data is right and only the truth of it is wrong.
+
+It needs the phase the run actually stopped at: items after it were not performed,
+and the item in progress was partial. `exercise_logs.completed_dose` is nullable
+precisely so "unknown" is expressible, and `was_skipped` already exists for
+"deliberately passed" — the missing third state is "never reached", which should
+probably not produce a row at all.
+
+This matters more than it looks: Build 2's progression and the recency window both
+read these rows, so a minute of testing currently looks like a completed workout.
+
+---
+
+## 6. `swap` is accepted and ignored
 
 **Severity: low — known, deliberate, pre-existing.**
 
@@ -100,7 +159,7 @@ the console slice. Currently logs a HUD note rather than failing silently.
 
 ---
 
-## 5. The anchor list is empty
+## 7. The anchor list is empty
 
 **Severity: low — an owner decision, not a defect.**
 
@@ -109,7 +168,7 @@ which movements should recur often enough to become familiar.
 
 ---
 
-## 6. One duplicate held back in review
+## 8. One duplicate held back in review
 
 **Severity: low.**
 
