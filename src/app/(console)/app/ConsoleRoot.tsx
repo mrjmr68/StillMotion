@@ -325,6 +325,11 @@ export default function ConsoleRoot({ boot }: { boot: ConsoleBoot }) {
     [post],
   );
 
+  const revokePairing = useCallback(async () => {
+    await post('/api/console/pair/revoke', {});
+    setPaired(false);
+  }, [post]);
+
   const saveFeedback = useCallback(
     async (rating: Rating | null, note: string) => {
       if (!feedback) return;
@@ -435,7 +440,12 @@ export default function ConsoleRoot({ boot }: { boot: ConsoleBoot }) {
 
       {showPairing && !running && (
         <div className="mb-6">
-          <PairPanel paired={paired} onClaim={claim} onDismiss={() => setShowPairing(false)} />
+          <PairPanel
+            paired={paired}
+            onClaim={claim}
+            onRevoke={revokePairing}
+            onDismiss={() => setShowPairing(false)}
+          />
         </div>
       )}
 

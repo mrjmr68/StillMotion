@@ -469,3 +469,15 @@ sign-in problem exhausts it — and the resulting failure ("email rate limit
 exceeded") looks like a new bug rather than a quota. Worth checking before
 concluding anything about a magic link that did not arrive. Raising it meaningfully
 needs custom SMTP, which is the same wall the email-template edit hit.
+
+**A television can be forgotten, because otherwise it cannot be moved.** Pairing
+only fires in response to a 401 — that is what stopped the TV stranding itself on
+a placeholder code it had forgotten. The flip side, found the first time a second
+account signed in: a set holding a valid token will never show a code again, so a
+TV paired to the wrong account was unmovable from either screen and needed
+`pairings.revoked_at` edited with a service key. `POST /api/console/pair/revoke`
+closes that, scoped to the caller's own pairings — account B must not be able to
+unpair account A's set, so the cross-account case still ends at whoever owns the
+pairing. The TV is not notified; it finds out on its next sync, which 401s and
+sends it down the same path a brand new set takes rather than adding a second
+mechanism to rot.

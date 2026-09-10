@@ -20,10 +20,12 @@ import { PrimaryButton } from './controls';
 export default function PairPanel({
   paired,
   onClaim,
+  onRevoke,
   onDismiss,
 }: {
   paired: boolean;
   onClaim: (code: string) => Promise<string | null>;
+  onRevoke: () => Promise<void>;
   onDismiss: () => void;
 }) {
   const [code, setCode] = useState('');
@@ -74,6 +76,25 @@ export default function PairPanel({
         <PrimaryButton onClick={submit} disabled={code.length !== 4 || busy}>
           {busy ? 'Connecting…' : 'Connect'}
         </PrimaryButton>
+
+        {/*
+          Forgetting the TV is the only way to make it show a code again — it
+          only asks for one in response to a 401. Without this, a set paired to
+          the wrong account needs database access to move.
+        */}
+        {paired && (
+          <button
+            type="button"
+            onClick={() => {
+              setBusy(true);
+              void onRevoke().finally(() => setBusy(false));
+            }}
+            disabled={busy}
+            className="min-h-[2.75rem] w-full text-sm text-neutral-500 disabled:opacity-40"
+          >
+            Forget the connected television
+          </button>
+        )}
         <button
           type="button"
           onClick={onDismiss}
