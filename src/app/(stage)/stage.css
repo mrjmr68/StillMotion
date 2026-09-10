@@ -1,0 +1,383 @@
+/*
+ * The stage's entire stylesheet.
+ *
+ * Hand-written on purpose. Spec §3 puts this on a smart-TV browser — "roughly a
+ * phone browser from several years ago, on weak hardware" — and §8's brief is
+ * legibility at ten feet in the first second. Tailwind's preflight plus theme
+ * layer would be a stylesheet we use almost none of, and `next/font` would make
+ * first paint wait on two webfont downloads. The system font stack is already
+ * installed on the device and renders instantly.
+ *
+ * Sizes are in vmin so a 720p set scales the same as a 1080p one.
+ *
+ * Animation is restricted to `transform` and `opacity` per §3 — no blur, no
+ * filters, no box-shadow transitions. The one knowing exception is the
+ * countdown ring's stepped `stroke-dashoffset`, which is inherently a stroke
+ * animation; it is stepped at the render tick with no CSS transition, on a
+ * single small path.
+ */
+
+:root {
+  --ground: #0b0b0c;
+  --ink: #f2efe9;
+  --accent: #e0894a;
+  --urgent: #c9482f;
+  --muted: rgba(242, 239, 233, 0.4);
+  --faint: rgba(242, 239, 233, 0.15);
+
+  --type-name: 7vmin;
+  --type-numerals: 10vmin;
+  --type-cue: 2.6vmin;
+  --type-next: 2vmin;
+  --type-side: 9vmin;
+  --type-block: 2.4vmin;
+
+  /* Many televisions still overscan. Without this the progress bar at the very
+     top of §8's layout is simply not on the screen. */
+  --overscan: 4vmin;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* A remote has no pointer and nothing here is selectable text. */
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--overscan);
+}
+
+/* --- top: session progress ------------------------------------------- */
+
+.progress {
+  height: 0.5vmin;
+  background: var(--faint);
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left center;
+  /* scaleX rather than width: transform only. */
+  transform: scaleX(0);
+}
+
+/* --- middle: the focal area ------------------------------------------ */
+
+.stage__main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.block-label {
+  font-size: var(--type-block);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5vmin;
+}
+
+.movement-name {
+  font-size: var(--type-name);
+  font-weight: 600;
+  line-height: 1.05;
+  text-align: center;
+  margin: 0 0 2vmin;
+  max-width: 80vw;
+}
+
+/*
+ * The figure box.
+ *
+ * At Tier 0 there is no artwork — asset files do not exist yet — so this holds
+ * a placeholder. It reserves the EXACT box the real figure will occupy, so the
+ * type scale tuned at ten feet today still holds the day art lands.
+ */
+/*
+ * Sizes below are budgeted to fit 720p with the overscan inset, since a 16:9
+ * television is height-constrained and vmin tracks the short edge. At 1280x720
+ * one vmin is 7.2px, so the whole column has ~662px to live in once the 4vmin
+ * inset is taken off top and bottom. Adding height here means taking it
+ * somewhere else.
+ */
+.figure {
+  width: 26vmin;
+  height: 26vmin;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5vmin;
+}
+
+.figure__placeholder {
+  width: 100%;
+  height: 100%;
+  border: 0.3vmin solid var(--faint);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: var(--type-next);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.figure img,
+.figure video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* --- countdown ------------------------------------------------------- */
+
+.countdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+ * The ring is sized in CSS, not via the SVG width/height attributes — those do
+ * not accept vmin, and setting them there renders the ring at its intrinsic
+ * size and blows the layout apart. Learned from the probe.
+ */
+.countdown__ring {
+  width: 24vmin;
+  height: 24vmin;
+  transform: rotate(-90deg);
+}
+
+.countdown__track {
+  fill: none;
+  stroke: var(--faint);
+}
+
+.countdown__sweep {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  /* No transition: the value is stepped at the render tick. A CSS transition
+     here would fight the clock and stutter on weak hardware. */
+}
+
+.countdown__sweep--urgent {
+  stroke: var(--urgent);
+}
+
+.countdown__value {
+  position: absolute;
+  font-size: var(--type-numerals);
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.countdown__value--urgent {
+  color: var(--urgent);
+}
+
+.countdown__target {
+  position: absolute;
+  font-size: var(--type-numerals);
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- side badge (L/R for unilateral work) ---------------------------- */
+
+/*
+ * The side indicator sits BESIDE the ring rather than below it. Spec §8 asks for
+ * it but doesn't place it, and on a height-constrained 16:9 screen a stacked
+ * badge costs ~65px of vertical budget that the figure and the name need more.
+ * Absolutely positioned, so it occupies no layout height at all.
+ */
+.side-badge {
+  position: absolute;
+  left: 100%;
+  margin-left: 4vmin;
+  font-size: var(--type-side);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/*
+ * The side-switch "chime", which is visual.
+ *
+ * Audio is backlog per §8, and TV audio autoplay is a separate unlock from
+ * video autoplay, so today the switch announces itself with an accent flash
+ * plus the incoming letter scaling in. Both are opacity/transform only.
+ */
+.side-flash {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.side-flash--on {
+  animation: side-flash 400ms ease-out;
+}
+
+@keyframes side-flash {
+  0% { opacity: 0; }
+  30% { opacity: 0.35; }
+  100% { opacity: 0; }
+}
+
+/* --- bottom: cues and what's next ------------------------------------ */
+
+.stage__foot {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+/*
+ * The CC layer. Spec §8 models it on subtitles: off / key / full, switched from
+ * the phone at any moment. Fixed min-height so toggling it never reflows the
+ * focal area above.
+ */
+.cues {
+  min-height: 4vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cue {
+  font-size: var(--type-cue);
+  color: var(--ink);
+  opacity: 1;
+}
+
+.cue--enter {
+  animation: cue-in 300ms ease-out;
+}
+
+@keyframes cue-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.next-strip {
+  font-size: var(--type-next);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.setup-note {
+  font-size: var(--type-next);
+  color: var(--muted);
+  text-align: center;
+  max-width: 70vw;
+}
+
+/* --- centering screen (spec §7) -------------------------------------- */
+
+.centering {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6vmin;
+}
+
+.centering__word {
+  font-size: var(--type-name);
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/*
+ * The breath pacer: 4 counts in, 6 counts out. Pure CSS on `transform` — no JS,
+ * no timer. The 40/60 split of the ten-second cycle is the ratio itself.
+ */
+.pacer {
+  width: 26vmin;
+  height: 26vmin;
+  border-radius: 50%;
+  border: 0.4vmin solid var(--accent);
+  transform: scale(0.55);
+  animation: breathe 10s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%   { transform: scale(0.55); }
+  40%  { transform: scale(1); }
+  100% { transform: scale(0.55); }
+}
+
+.centering__reassure {
+  font-size: var(--type-next);
+  color: var(--faint);
+}
+
+/* --- pairing --------------------------------------------------------- */
+
+.pair-code {
+  font-size: 22vmin;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- offline dot and debug HUD --------------------------------------- */
+
+.offline-dot {
+  position: fixed;
+  top: var(--overscan);
+  right: var(--overscan);
+  width: 1.2vmin;
+  height: 1.2vmin;
+  border-radius: 50%;
+  background: var(--urgent);
+  opacity: 0.5;
+}
+
+/*
+ * The on-screen HUD is the only debugger this device has — §3 says there are no
+ * reliable devtools — so it must work on the real TV, not only in sim.
+ */
+.hud {
+  position: fixed;
+  left: var(--overscan);
+  bottom: var(--overscan);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 1.4vmin;
+  color: var(--muted);
+  line-height: 1.5;
+  text-align: left;
+  pointer-events: none;
+}

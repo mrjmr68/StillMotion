@@ -244,3 +244,78 @@ wait as a feature (the TV runs a breath pacer meanwhile), but two minutes is a
 long centering screen — worth either dropping to effort `medium` for the
 runtime call or designing the pacer for a longer hold. Not a blocker; a number
 to design around rather than discover in production.
+
+**The television can never read anything from Supabase, so a bundle endpoint is
+mandatory rather than an optimisation.** `exercise_catalog`'s only policy is
+`select ... to authenticated`, and the TV has no session by design (spec §3:
+"you never type on the TV"). It therefore cannot read the catalog, `sessions`,
+or `session_live_state` — every name, cue and setup note it displays has to
+arrive through a service-role endpoint. The upside is that this shape is forced
+rather than chosen: the TV fetches the plan plus every movement it references
+exactly once, holds it in memory, and after that the network is optional. §4's
+"if the network drops, the workout keeps running" falls out as a consequence of
+RLS rather than as a feature anyone had to build.
+
+**The stage timeline is `itemTotalSeconds` unrolled, term for term.**
+`buildTimeline` emits `[transition] [work(L)] [side_switch] [work(R)] [rest]`
+per item — exactly the terms `budget.ts` sums — so
+`Σ phase.seconds === plan.totals.total_seconds` is an identity, asserted by
+`stage:check` across all 64 template scenarios. That assertion is what keeps the
+planner's ±10% duration guarantee true at *runtime*; without it the TV could
+count down differently from what the validator budgeted and nothing would say
+so. Critically the timeline *consumes* `item.work_seconds` rather than
+recomputing it, so there is exactly one implementation of "how long is this
+movement" in the codebase.
+
+**The stage clock never accumulates.** Remaining time is always derived from
+wall time (`duration + added − (now − startedAt − pausedAccum)`), never
+decremented per tick. `setInterval` drift across a 60-minute session on weak
+hardware is real and TV browsers throttle timers in the background, so
+subtracting a tick per frame would turn drift into a session ending minutes
+late. The 200ms interval exists only to re-read the clock and re-render, which
+makes 200ms of jitter permanently 200ms rather than cumulative. No
+`requestAnimationFrame`: throttled or absent on old TV browsers, and it burns
+GPU on hardware §3 tells us is weak.
+
+**The reps soft cap is `item.work_seconds`, not raw `rep_cap_seconds`.**
+`itemWorkSeconds` scales the cap by `dose / default_dose`; using the raw cap
+would make the wall clock diverge from `totals` and quietly falsify the ±10%
+guarantee. Note also that a reps phase still advances when the cap expires —
+spec §8's "you are never stranded holding a kettlebell waiting for permission
+to continue" means Done is an *early* exit, not a required one.
+
+**`pairings.expires_at` gates only the unclaimed code.** Enforced while
+`claimed_at is null` and ignored afterwards. Otherwise a bookmarked television
+would un-pair itself fifteen minutes later, contradicting §3's "you bookmark one
+short URL once." The 4-digit code is a display artefact for a human; the real
+credential is a 32-byte token stored only as its SHA-256, so a database leak is
+not a paired TV.
+
+**The console and the stage have separate root layouts, via route groups.** The
+console moved to `src/app/(console)/` and the stage lives at
+`src/app/(stage)/`, each with its own `<html>`/`<body>`. A nested layout cannot
+remove the console's two Geist webfonts from `<head>` or Tailwind's preflight
+from the document, and §3 explicitly says `/stage` "does not share the console's
+component library." Verified rather than assumed: `/stage` links exactly one
+stylesheet, its own, with zero Geist or Tailwind references. Route groups don't
+appear in URLs, so `/`, `/login`, `/app` and `/auth/*` were unaffected.
+
+**"`/stage` is a separately-targeted bundle" is not achievable in Next 16.**
+Browserslist lives in `package.json` and is global; there is no per-route compile
+target. What the route group buys is separate CSS, fonts and document — not a
+separate JS target, and React 19 plus the App Router runtime ship to the stage
+regardless. Since config cannot enforce it, an ESLint override scoped to
+`src/app/(stage)/**` and `src/lib/stage/**` bans optional chaining, `??`,
+`Array.prototype.at`, `structuredClone` and friends, so at least our own source
+never depends on the compiler downleveling it. That keeps two escape hatches
+mechanical rather than a rewrite: widen browserslist globally (cheap here — one
+console user, on a modern phone), or lift the stage out to hand-written vanilla
+JS. Which is needed is a question only a load on the actual television answers.
+
+**The proxy no longer runs on `/stage` or `/api/stage`.** Those requests carry
+no Supabase cookie at all, so `getClaims()` had nothing to refresh and was
+costing an auth round-trip per poll — roughly one a second for a whole session.
+Written as extra negative lookaheads on the existing matcher rather than a
+positive matcher, so nothing previously covered silently fell out;
+`src/lib/supabase/proxy.ts` and its cookie-sync contract are untouched, and
+`/app` still redirects when unauthenticated.

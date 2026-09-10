@@ -246,6 +246,10 @@ export type Database = {
           created_at: string
           expires_at: string
           id: string
+          last_seen_at: string | null
+          revoked_at: string | null
+          stage_screen: string
+          stage_token_hash: string | null
           user_id: string | null
         }
         Insert: {
@@ -254,6 +258,10 @@ export type Database = {
           created_at?: string
           expires_at?: string
           id?: string
+          last_seen_at?: string | null
+          revoked_at?: string | null
+          stage_screen?: string
+          stage_token_hash?: string | null
           user_id?: string | null
         }
         Update: {
@@ -262,6 +270,10 @@ export type Database = {
           created_at?: string
           expires_at?: string
           id?: string
+          last_seen_at?: string | null
+          revoked_at?: string | null
+          stage_screen?: string
+          stage_token_hash?: string | null
           user_id?: string | null
         }
         Relationships: []
@@ -275,8 +287,11 @@ export type Database = {
           is_paused: boolean
           pending_command: string | null
           pending_command_payload: Json | null
+          phase: string | null
+          phase_index: number
           seconds_remaining: number
           session_id: string
+          side: string | null
           updated_at: string
           user_id: string
         }
@@ -288,8 +303,11 @@ export type Database = {
           is_paused?: boolean
           pending_command?: string | null
           pending_command_payload?: Json | null
+          phase?: string | null
+          phase_index?: number
           seconds_remaining?: number
           session_id: string
+          side?: string | null
           updated_at?: string
           user_id: string
         }
@@ -301,8 +319,11 @@ export type Database = {
           is_paused?: boolean
           pending_command?: string | null
           pending_command_payload?: Json | null
+          phase?: string | null
+          phase_index?: number
           seconds_remaining?: number
           session_id?: string
+          side?: string | null
           updated_at?: string
           user_id?: string
         }
