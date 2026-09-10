@@ -450,3 +450,22 @@ serve its own chunks and the HMR socket to an unrecognised origin, so loading th
 console from the phone produced a rendered shell with every interaction dead —
 which looks like broken application code and isn't. Development only; `next
 build` is unaffected.
+
+**Supabase silently substitutes `site_url` when `emailRedirectTo` is not on the
+allow-list.** It does not error, and nothing in the response says it happened —
+so a correct `emailRedirectTo` produced an email pointing somewhere else
+entirely, and the only symptom was the phone's browser failing to resolve a host.
+Diagnosing it meant reading the project's auth config through the Management API
+rather than reasoning about the code, which was fine. The project now allow-lists
+both origins explicitly (`http://localhost:3000/auth/confirm` and
+`http://192.168.0.13:3000/auth/confirm`) with `site_url` on the LAN address, so
+even the substitution path lands somewhere the phone can reach. Exact paths rather
+than wildcards: this list is what decides where Supabase will hand out an auth
+code.
+
+**The built-in email service is capped at 2 sends per hour.**
+`rate_limit_email_sent` is 2 on this project, which is low enough that debugging a
+sign-in problem exhausts it — and the resulting failure ("email rate limit
+exceeded") looks like a new bug rather than a quota. Worth checking before
+concluding anything about a magic link that did not arrive. Raising it meaningfully
+needs custom SMTP, which is the same wall the email-template edit hit.
