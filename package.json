@@ -13,7 +13,8 @@
     "plan": "node --env-file-if-exists=.env.local --import tsx scripts/planner/plan.ts",
     "plan:check": "node --env-file-if-exists=.env.local --import tsx scripts/planner/check.ts",
     "stage:check": "node --env-file-if-exists=.env.local --import tsx scripts/stage/check.ts",
-    "stage:seed": "node --env-file-if-exists=.env.local --import tsx scripts/stage/seed.ts"
+    "stage:seed": "node --env-file-if-exists=.env.local --import tsx scripts/stage/seed.ts",
+    "stage:drive": "node --env-file-if-exists=.env.local --import tsx scripts/stage/drive.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",

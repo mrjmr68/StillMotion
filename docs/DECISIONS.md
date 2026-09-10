@@ -319,3 +319,43 @@ Written as extra negative lookaheads on the existing matcher rather than a
 positive matcher, so nothing previously covered silently fell out;
 `src/lib/supabase/proxy.ts` and its cookie-sync contract are untouched, and
 `/app` still redirects when unauthenticated.
+
+**The pairing code is returned on every sync, not just from `/pair`.** The
+television does not remember its own code. A remount, a hot reload, or a set
+rebooting mid-pair otherwise strands the screen on a placeholder with nothing to
+type — found exactly that way while wiring the flow up. Pairing is now minted
+only in response to a 401, which is the one unambiguous "the server has no
+pairing for you" signal, and the code itself rides along on the poll the TV is
+already making.
+
+**Commands are acknowledged by a payload id, and the guard earns its keep.**
+The console stamps a uuid into `pending_command_payload`, the TV applies the
+command and acknowledges that id on its next sync, and the server clears with a
+compare-and-swap on it. The id lives in the payload rather than the command name
+because `add_30s` is the one command a human genuinely presses twice in a row,
+and a CAS on the name would silently collapse the second press into the first.
+The at-most-once guard fired in real traffic during the first end-to-end run —
+a redelivered `add_30s` was correctly ignored rather than adding sixty seconds.
+
+**Query flags go through `useSyncExternalStore`, not a `useState` initialiser.**
+Reading `window.location.search` during the initial render makes the server
+produce a HUD-less tree and the client produce one with the HUD, which is a
+hydration mismatch: React discards the server HTML and the television flashes on
+every boot for no reason. The store's server snapshot is the honest way to say
+"this value only exists on the client".
+
+**Nothing that drives rendering is held in a ref.** An earlier draft kept the run
+state, the timeline and the cue level in refs so async callbacks could read them
+without a stale closure, and rendered from those refs — which React's own lint
+rule flags, because a ref read during render can silently show a previous value.
+Refs are now callback-only; the timeline is derived from the plan with `useMemo`.
+On a screen with no devtools, a stale render would be a miserable bug to chase.
+
+**The clock finishing is what ends a session.** Whether the timeline ran out or
+`end` was pressed, `run.finished` is the single trigger that reports completion,
+writes `plan_performed`, and inserts `exercise_logs`. Guarded by a ref because
+the render tick would otherwise fire it every 200ms. `outcome` distinguishes
+running off the end (`completed`) from stopping early (`abandoned`).
+Verified end to end: a unilateral movement produces two `exercise_logs` rows,
+left and right, from one plan item — which is the whole point of side being a
+column in that table's unique key rather than part of the item index.
