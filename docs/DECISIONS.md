@@ -175,3 +175,72 @@ it — correctly treating it as an example — but referenced it as a relation h
 seven times across four different patterns, so those links had nowhere to land.
 Any movement used as an exemplar therefore has to be in some category's
 `mustInclude`, or it will be referenced and never exist.
+
+**Plan rounds are flattened at expand time; a unilateral movement is one item
+with two sides.** Both are forced by the schema rather than chosen.
+`session_live_state` carries only `current_block_index` / `current_item_index` —
+there is no round cursor — and `exercise_logs`' unique key is
+`(session_id, block_index, item_index, side)`. Flattening keeps both working
+with no migration, and it is what makes the sequencing rules checkable at all,
+since "no more than two consecutive items sharing a primary region" and "hardest
+work not in the final 15%" need the flat running order across round and block
+boundaries. Because `side` is a column *in* that key rather than part of
+`item_index`, one item logs two rows — which turns "unilateral work always
+schedules both sides, same dose" into something unconstructible-if-violated
+rather than a rule to check.
+
+**Avoided regions are a hard error on `primary_regions` only; secondary
+involvement is a warning.** Measured against the live catalog: `mat|wall|chair`
+plus "avoid hip" leaves 25 rows when avoidance tests primary only, but 12 rows
+with just 2 main-work entries if secondary counts too — which makes a 60-minute
+session arithmetically impossible. It is also the right reading: "avoid hip
+today" means don't make the hip the target, not "never let the hip participate,"
+which would rule out standing up.
+
+**Templates are stored as `PlanDraft`, not `SessionPlan`.** A fallback then runs
+the identical expand → validate → repair path as a generated plan, so it gets
+*fitted* to the check-in — equipment substitutions, dose trims — rather than
+served rigidly. Costs nothing extra and turns "a canned workout" into "a canned
+skeleton, adapted." `plan:check` validates all four against the live catalog
+across 64 duration × equipment × avoid-region scenarios, because a template
+referencing a deleted `exercise_id` would silently break the one path that
+guarantees "you always get a workout." Run it after every `catalog:import`.
+
+**Focus is a scoring bias, never a filter.** This is what makes the check-in's
+"balance & control" option work despite the catalog having zero entries with
+`modality: 'balance'` — the label promises a quality of movement (single-leg
+work, carries, gait, ground transitions), not a database column. Biasing rather
+than filtering yields 31 candidates, and a real generation confirmed it:
+Cossack squats, lateral step-outs, split squats, step-ups and shuffles. The
+prompt states the absence explicitly, because otherwise the model hunts for a
+modality that does not exist and either invents an id or returns a thin block.
+
+**Two spec rules are deliberately allowed to bend, in writing rather than via a
+quiet `catch`.** (1) `consecutive_region`: `primary_regions` is concentrated —
+shoulder 41 of 91 rows, hip 40 — so with "avoid hip" the main pool is
+overwhelmingly shoulder-dominant and any three consecutive items share
+`shoulder` by construction. Once swaps and substitutions are exhausted this
+downgrades to a warning rather than escalating, because a re-prompt cannot fix a
+pool with no alternative. (2) `hard_work_late` is skipped entirely when all main
+work shares one intensity: there is then no "hardest work" to misplace, and
+firing would be unfixable by construction. Separately, spec §7 wants
+conditioning *after* strength AND the hardest work *out of* the final 15%; when
+a conditioning block closes the session those collide, resolved by ordering that
+block to end on its easiest movement.
+
+**Validator findings are per-item, so a repairer must re-validate between
+fixes.** Rounds flatten one movement into several items, so a 4-round block
+yields four identical findings for the same offending movement. Acting on a
+stale list meant the first fix replaced all four instances and the remaining
+three then re-substituted the *replacement* — 25 repairs that produced a session
+built from three copies of one movement with doses inflated by each pass. The
+substitution pass now re-runs `planErrors` between fixes. Worth recording
+because the bug was invisible in the output (a valid-looking plan) and only
+showed up as absurd repair counts.
+
+**Generation takes ~2 minutes at effort `high`, not the spec's 20-30 seconds.**
+Measured on real 40- and 25-minute sessions with adaptive thinking. §7 treats the
+wait as a feature (the TV runs a breath pacer meanwhile), but two minutes is a
+long centering screen — worth either dropping to effort `medium` for the
+runtime call or designing the pacer for a longer hold. Not a blocker; a number
+to design around rather than discover in production.
