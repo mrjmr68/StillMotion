@@ -1,0 +1,68 @@
+{
+  "checkin": {
+    "duration_min": 40,
+    "energy": "normal",
+    "focus": "surprise",
+    "avoid_regions": [],
+    "equipment_on_hand": [
+      "mat",
+      "wall",
+      "chair"
+    ],
+    "emphasis": "full",
+    "format_preference": "let_it_choose",
+    "floor_tolerance": "fine",
+    "include_exercise_ids": [],
+    "exclude_exercise_ids": [],
+    "recent_exercise_ids": []
+  },
+  "draft": {
+    "intent": "Far too short for the time requested.",
+    "blocks": [
+      {
+        "kind": "prepare",
+        "label": "Open up",
+        "format": "flow",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "rotate_cat_cow",
+            "dose": 6,
+            "rest_seconds": 0
+          }
+        ]
+      },
+      {
+        "kind": "main",
+        "label": "Quick",
+        "format": "circuit",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "push_h_push_up",
+            "dose": 6,
+            "rest_seconds": 15
+          },
+          {
+            "exercise_id": "hinge_single_leg_glute_bridge",
+            "dose": 6,
+            "rest_seconds": 15
+          }
+        ]
+      },
+      {
+        "kind": "down_regulate",
+        "label": "Settle",
+        "format": "flow",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "anti_rotate_diaphragmatic_breathing",
+            "dose": 4,
+            "rest_seconds": 0
+          }
+        ]
+      }
+    ]
+  }
+}

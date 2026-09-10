@@ -1,0 +1,90 @@
+{
+  "checkin": {
+    "duration_min": 25,
+    "energy": "normal",
+    "focus": "surprise",
+    "avoid_regions": [
+      "hip"
+    ],
+    "equipment_on_hand": [
+      "mat",
+      "wall",
+      "chair"
+    ],
+    "emphasis": "full",
+    "format_preference": "let_it_choose",
+    "floor_tolerance": "fine",
+    "include_exercise_ids": [],
+    "exclude_exercise_ids": [],
+    "recent_exercise_ids": []
+  },
+  "draft": {
+    "intent": "Hip work on a hip-avoid day.",
+    "blocks": [
+      {
+        "kind": "prepare",
+        "label": "Open up",
+        "format": "flow",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "rotate_cat_cow",
+            "dose": 8,
+            "rest_seconds": 0
+          },
+          {
+            "exercise_id": "rotate_sphinx_pose",
+            "dose": 45,
+            "rest_seconds": 0
+          }
+        ]
+      },
+      {
+        "kind": "main",
+        "label": "Work",
+        "format": "circuit",
+        "rounds": 4,
+        "items": [
+          {
+            "exercise_id": "hinge_single_leg_glute_bridge",
+            "dose": 10,
+            "rest_seconds": 25
+          },
+          {
+            "exercise_id": "push_h_push_up",
+            "dose": 10,
+            "rest_seconds": 25
+          },
+          {
+            "exercise_id": "squat_wall_sit",
+            "dose": 40,
+            "rest_seconds": 25
+          },
+          {
+            "exercise_id": "gait_lateral_step_out",
+            "dose": 40,
+            "rest_seconds": 25
+          }
+        ]
+      },
+      {
+        "kind": "down_regulate",
+        "label": "Settle",
+        "format": "flow",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "rotate_supine_spinal_twist",
+            "dose": 40,
+            "rest_seconds": 0
+          },
+          {
+            "exercise_id": "anti_rotate_diaphragmatic_breathing",
+            "dose": 8,
+            "rest_seconds": 0
+          }
+        ]
+      }
+    ]
+  }
+}

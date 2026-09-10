@@ -1,0 +1,88 @@
+{
+  "checkin": {
+    "duration_min": 25,
+    "energy": "normal",
+    "focus": "surprise",
+    "avoid_regions": [],
+    "equipment_on_hand": [
+      "mat",
+      "wall",
+      "chair"
+    ],
+    "emphasis": "full",
+    "format_preference": "let_it_choose",
+    "floor_tolerance": "fine",
+    "include_exercise_ids": [],
+    "exclude_exercise_ids": [],
+    "recent_exercise_ids": []
+  },
+  "draft": {
+    "intent": "References a movement that does not exist.",
+    "blocks": [
+      {
+        "kind": "prepare",
+        "label": "Open up",
+        "format": "flow",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "rotate_cat_cow",
+            "dose": 8,
+            "rest_seconds": 0
+          },
+          {
+            "exercise_id": "ground_transition_quadruped_rock_back",
+            "dose": 10,
+            "rest_seconds": 0
+          }
+        ]
+      },
+      {
+        "kind": "main",
+        "label": "Work",
+        "format": "circuit",
+        "rounds": 4,
+        "items": [
+          {
+            "exercise_id": "squat_barbell_back_squat",
+            "dose": 8,
+            "rest_seconds": 25
+          },
+          {
+            "exercise_id": "push_h_push_up",
+            "dose": 10,
+            "rest_seconds": 25
+          },
+          {
+            "exercise_id": "hinge_single_leg_glute_bridge",
+            "dose": 10,
+            "rest_seconds": 25
+          },
+          {
+            "exercise_id": "squat_wall_sit",
+            "dose": 40,
+            "rest_seconds": 25
+          }
+        ]
+      },
+      {
+        "kind": "down_regulate",
+        "label": "Settle",
+        "format": "flow",
+        "rounds": 1,
+        "items": [
+          {
+            "exercise_id": "hinge_child_s_pose",
+            "dose": 60,
+            "rest_seconds": 0
+          },
+          {
+            "exercise_id": "anti_rotate_diaphragmatic_breathing",
+            "dose": 8,
+            "rest_seconds": 0
+          }
+        ]
+      }
+    ]
+  }
+}

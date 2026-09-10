@@ -9,7 +9,9 @@
     "lint": "eslint",
     "catalog:generate": "node --env-file-if-exists=.env.local --import tsx scripts/catalog/generate.ts",
     "catalog:review": "node --env-file-if-exists=.env.local --import tsx scripts/catalog/review.ts",
-    "catalog:import": "node --env-file-if-exists=.env.local --import tsx scripts/catalog/import.ts"
+    "catalog:import": "node --env-file-if-exists=.env.local --import tsx scripts/catalog/import.ts",
+    "plan": "node --env-file-if-exists=.env.local --import tsx scripts/planner/plan.ts",
+    "plan:check": "node --env-file-if-exists=.env.local --import tsx scripts/planner/check.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",
