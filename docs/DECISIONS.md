@@ -481,3 +481,26 @@ unpair account A's set, so the cross-account case still ends at whoever owns the
 pairing. The TV is not notified; it finds out on its next sync, which 401s and
 sends it down the same path a brand new set takes rather than adding a second
 mechanism to rot.
+
+**Browserslist is pinned low, and the television is why.** Next's default floor is
+around Chrome 109, and the stage bundle it emitted contained 38 optional chainings,
+60 nullish coalescings and a logical assignment. An engine below Chrome 80 cannot
+PARSE that, so it throws a SyntaxError, no client code runs, and the screen holds
+the server-rendered shell forever — which presented as a pairing screen stuck on
+`····` with not one `/api/stage/*` request in the server log. This is the flag from
+the stage plan coming due, and the escape hatch it named being taken. Details and
+the per-entry reasoning are in `BROWSERSLIST.md`. The cost lands entirely on the
+console, which runs on a current phone and does not care.
+
+**`/stage?ua=1` prints the user-agent from the server.** Every other diagnostic on
+this screen, the `?debug=1` HUD included, needs JavaScript to be running — so all
+of them are useless in exactly the failure that matters most, a bundle the engine
+cannot parse. Rendering the UA server-side is the one thing that still answers
+"what is this television" when nothing else does, and spec §3 says there are no
+devtools to fall back on.
+
+**Dev mode is the wrong thing to put on the television.** The dev bundle carries the
+HMR client and React refresh and is served as on-demand Turbopack chunks whose names
+change every time the server restarts, so a TV holding a stale page requests files
+that no longer exist. For anything being judged on the real set, serve a production
+build.
