@@ -8,6 +8,13 @@
  *
  * Also handles the cue level, which spec §8 models on subtitles: switched from
  * the phone at any moment, persisted as a preference.
+ *
+ * EVERY write here is an upsert, and that is load-bearing rather than defensive.
+ * `session_live_state` has no row until a session starts, so the original
+ * `update` meant the one command that STARTS a session had nowhere to land: zero
+ * rows changed, no error from Postgres, a 200 from here, and a television that
+ * never heard anything. Begin from the phone could not work, and it went unseen
+ * because the first verification pressed OK on the TV instead.
  */
 
 import { randomUUID } from 'node:crypto';
@@ -44,14 +51,18 @@ export async function POST(request: NextRequest) {
   // rather than being consumed once.
   if (body.cue_level) {
     if (CUE_LEVELS.indexOf(body.cue_level) < 0) return json({ error: 'invalid_cue_level' }, 400);
-    await service
-      .from('session_live_state')
-      .update({ cue_level: body.cue_level })
-      .eq('session_id', body.session_id);
+
+    await service.from('session_live_state').upsert(
+      { session_id: body.session_id, user_id: userId, cue_level: body.cue_level },
+      { onConflict: 'session_id' },
+    );
+    // The preferences row may not exist either — it is created by the first
+    // check-in, and changing cues before ever generating is a legal order of
+    // operations.
     await service
       .from('user_preferences')
-      .update({ cue_level: body.cue_level })
-      .eq('user_id', userId);
+      .upsert({ user_id: userId, cue_level: body.cue_level }, { onConflict: 'user_id' });
+
     if (!body.command) return json({ cue_level: body.cue_level });
   }
 
@@ -62,12 +73,30 @@ export async function POST(request: NextRequest) {
   const id = randomUUID();
   const payload = { ...(body.payload ?? {}), id };
 
-  const { error } = await service
+  const { data: queued, error } = await service
     .from('session_live_state')
-    .update({ pending_command: body.command, pending_command_payload: payload })
-    .eq('session_id', body.session_id);
+    .upsert(
+      {
+        session_id: body.session_id,
+        user_id: userId,
+        pending_command: body.command,
+        pending_command_payload: payload,
+      },
+      { onConflict: 'session_id' },
+    )
+    .select('session_id');
 
   if (error) return json({ error: 'could_not_queue', detail: error.message }, 500);
+
+  /*
+   * Affecting no rows is a failure, and saying so is the actual lesson here.
+   * The original bug was not the missing upsert so much as the silence around
+   * it — a write that changes nothing looks identical to a write that worked,
+   * and the only symptom was a button that did nothing.
+   */
+  if (!queued || queued.length === 0) {
+    return json({ error: 'not_queued', detail: 'the command changed no rows' }, 500);
+  }
 
   return json({ id, command: body.command });
 }

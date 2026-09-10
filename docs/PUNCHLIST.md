@@ -97,6 +97,16 @@ alias. Needs a decision, not work.
 
 ## Resolved during this run
 
+- **Begin on the phone did nothing.** `POST /api/console/command` did an `update`
+  on `session_live_state`, but that row does not exist until a session starts — so
+  the one command whose job is to START a session had nowhere to land. Zero rows
+  changed, no error from Postgres, a 200 from the endpoint, and a television that
+  never heard anything. Unseen until now because the first verification pressed OK
+  on the TV, which takes a different path. All three writes in that endpoint are
+  upserts now, affecting zero rows is reported as a failure rather than a success,
+  and the console shows it. Same update-vs-upsert class as the `user_preferences`
+  bug found earlier the same day — worth treating as a pattern to look for.
+
 - **Magic link failed from the phone.** Three independent causes: a hardcoded
   `NEXT_PUBLIC_SITE_URL`, Next dev blocking its own chunks from the LAN address, and
   Supabase silently substituting `site_url` for a non-allow-listed redirect. All

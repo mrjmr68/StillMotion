@@ -274,10 +274,18 @@ export default function ConsoleRoot({ boot }: { boot: ConsoleBoot }) {
   const begin = useCallback(async () => {
     if (!sessionId) return;
     setBusy(true);
+    setError(null);
     // The phone does not start the session; it asks the TV to, and the TV calls
     // /api/stage/begin. Anything else would let the clock start on a screen
     // nobody is looking at.
-    await post('/api/console/command', { session_id: sessionId, command: 'begin' });
+    const { ok } = await post('/api/console/command', {
+      session_id: sessionId,
+      command: 'begin',
+    });
+    // Say so. A Begin that quietly fails is indistinguishable from a television
+    // that is slow to react, and you will press it again rather than look for a
+    // problem — which is exactly how the dropped-command bug hid.
+    if (!ok) setError('Could not reach the television. Check it is still on the stage screen.');
     setBusy(false);
   }, [post, sessionId]);
 
@@ -293,7 +301,9 @@ export default function ConsoleRoot({ boot }: { boot: ConsoleBoot }) {
     async (command: StageCommand) => {
       if (!sessionId) return;
       setPendingCommand(command);
-      await post('/api/console/command', { session_id: sessionId, command });
+      setError(null);
+      const { ok } = await post('/api/console/command', { session_id: sessionId, command });
+      if (!ok) setError(`${command} did not reach the television.`);
       setTimeout(() => setPendingCommand(null), 700);
     },
     [post, sessionId],
@@ -436,6 +446,13 @@ export default function ConsoleRoot({ boot }: { boot: ConsoleBoot }) {
             </button>
           </form>
         </header>
+      )}
+
+      {/* One place for a failure to appear, whatever screen you are on. */}
+      {error !== null && session !== null && (
+        <p className="mb-4 rounded-xl border border-red-900/70 bg-red-950/40 px-4 py-3 text-sm text-red-200">
+          {error}
+        </p>
       )}
 
       {showPairing && !running && (

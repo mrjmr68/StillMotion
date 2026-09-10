@@ -504,3 +504,20 @@ HMR client and React refresh and is served as on-demand Turbopack chunks whose n
 change every time the server restarts, so a TV holding a stale page requests files
 that no longer exist. For anything being judged on the real set, serve a production
 build.
+
+**A write that changes no rows is a failure, and the endpoint says so.** `begin`
+from the phone silently did nothing because `session_live_state` has no row until a
+session starts, and the command endpoint used `update` — zero rows, no Postgres
+error, a 200 response, and a dead button. The upsert is the fix, but the lesson is
+the reporting: an affected-row count of zero now returns a 500 and the console
+renders it. This is the second instance of the same shape in one day (the first was
+`user_preferences`), so in this schema the question to ask of any write is "does the
+row definitely exist yet", and the answer is usually no.
+
+**`console:watch` watches the rows, not the log.** `next start` logs almost nothing,
+so during a run on the real television there is no request log to read — which is
+how a dropped command stayed invisible. The script reports transitions and, above
+all, a command still unclaimed after three seconds: the TV polls every 750ms, so an
+unclaimed command means either it is not running or the phone wrote somewhere it is
+not reading. That is the signature of the bug above, and it would have named it in
+three seconds.
