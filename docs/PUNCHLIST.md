@@ -31,40 +31,63 @@ the finding already carries: `prepare: 2 of 3 needed; main work: 5 of 6 needed`.
 
 ## 2. The default check-in cannot reach the generator
 
-**Severity: high — it is the out-of-the-box experience.**
+**Severity: high — it is the out-of-the-box experience, and it is not marginal.**
 
-`DEFAULT_CHECKIN` sets `equipment_on_hand: []`. That was deliberate — prescribing a
-kettlebell someone doesn't own produces a session they can't do, and the failure
-would look like a bad plan rather than a bad default. But the consequence is worse
-than the thing it avoided: with no equipment the bodyweight pool cannot fill 25
-minutes, so a first-time user who never opens "More options" gets a degraded
-template every time and never sees the generator at all.
+Measured against the real catalog:
 
-Three candidate fixes, not mutually exclusive:
+| equipment | pool | 15 | 25 | 40 | 60 |
+| --- | --- | --- | --- | --- | --- |
+| nothing (the default) | 12 | ok | **no** | **no** | **no** |
+| mat | 46 | ok | ok | ok | ok |
+| mat + wall | 50 | ok | ok | ok | ok |
+| mat + wall + chair | 55 | ok | ok | ok | ok |
+| everything | 91 | ok | ok | ok | ok |
 
-- **Surface feasibility before Generate, not after.** `feasibility()` is already
-  pure and already runs server-side; the console could call it as the check-in
-  changes and say "bodyweight only gets you about 15 minutes" while there is still
-  time to tick Mat. This is the one that treats the user as informed rather than
-  surprised.
-- **Fill the bodyweight pool** (see 3).
-- **Reconsider the default.** `mat` is close to universal and unlocks a large
-  fraction of the catalog. Still a guess about someone's room, but a far cheaper
-  one to be wrong about than an empty set is.
+Shortfalls with no equipment:
+
+```
+25min  prepare: 2 of 3 needed; main work: 5 of 6 needed
+40min  prepare: 2 of 3; main work: 5 of 8; down-regulate: 2 of 3
+60min  prepare: 2 of 4; main work: 5 of 10; down-regulate: 2 of 3
+```
+
+So `DEFAULT_CHECKIN`'s `equipment_on_hand: []` is not a slightly pessimistic
+default — it is the one setting under which **only a 15-minute session can ever be
+generated**. Everything longer skips generation entirely. The reasoning behind the
+default was sound (never prescribe a kettlebell someone does not own) and the
+consequence is worse than the thing it avoided.
+
+**A single mat takes the pool from 12 to 46 and makes all four durations feasible.**
+That is the whole fix for three of the four, from one default.
+
+Do both of these:
+
+- **Default `equipment_on_hand` to `['mat']`.** Highest leverage in the codebase
+  per character changed. Still a guess about someone's room, but being wrong about
+  a mat costs one substitution, while being wrong about an empty room costs the
+  generator entirely.
+- **Surface feasibility on the form, before Generate.** `feasibility()` is already
+  pure and already runs server-side. The console should say "bodyweight only
+  reaches 15 minutes" while there is still time to tick something, rather than
+  reporting it after the fact. This is the part that treats the user as informed
+  instead of surprised, and it stays correct as the catalog grows.
 
 ---
 
-## 3. Catalog gap: bodyweight, no equipment
+## 3. The catalog is 87% props
 
-**Severity: medium — a data problem, not a code one.**
+**Severity: medium — a data bias, not a code fault.**
 
-Equipment-free counts are below the `MIN_POOL_SIZES` thresholds for 25 minutes:
-2 prepare (needs 3) and 5 main (needs 6). This is the same shape as the already-known
-`minimize_floor` gap, which leaves 7 prep and 7 down-regulate.
+Only **12 of 91** entries need no equipment at all. The generation batches leaned on
+props without anyone deciding they should, and the equipment-free floor is what
+item 2 runs into. Related: the known `minimize_floor` gap leaves 7 prep and 7
+down-regulate.
 
-The highest-value `catalog:generate` batch is therefore the intersection:
+The highest-value `catalog:generate` batch is the intersection of both gaps:
 **standing and seated mobility, breath work, and bodyweight main-work movements
-needing no props.** One batch plausibly fixes both gaps.
+needing no props.** One batch plausibly fixes both, and would raise the
+equipment-free pool from 12 to somewhere near 25 — enough for a 40-minute session
+with nothing but a floor.
 
 ---
 
