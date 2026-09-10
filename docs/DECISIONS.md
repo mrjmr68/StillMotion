@@ -359,3 +359,75 @@ running off the end (`completed`) from stopping early (`abandoned`).
 Verified end to end: a unilateral movement produces two `exercise_logs` rows,
 left and right, from one plan item — which is the whole point of side being a
 column in that table's unique key rather than part of the item index.
+
+**The console reads Supabase directly and writes through route handlers.** The
+phone is authenticated, so `sessions`, `session_live_state`, `pairings` and
+`exercise_catalog` are all readable under its own RLS — putting a server hop in
+front of the 750ms mirror poll would be latency for nothing. Every write is the
+opposite: claiming a pairing the user does not own yet, queueing a command into a
+table with no update policy, setting the TV's screen during generation. Those are
+exactly the rows RLS refuses, which is what `service_role` is for. The split is
+therefore the policies' shape, not a preference — and `/app` loading correctly is
+a standing check that the phone can see its own data.
+
+**Which screen the console shows is derived from `sessions.status`, never from
+what was last tapped.** There is no local "I pressed Begin" flag, because every
+transition the console cares about is made by the TELEVISION: planned to active
+when the TV picks up `begin`, active to complete when the clock runs out. A local
+flag would be a second opinion about a fact the phone does not own, and the two
+would disagree the first time a phone locked mid-session. The cost is a 2s status
+poll; the benefit is that a reload, a slept phone, or picking the phone up
+mid-workout all land exactly where you actually are.
+
+**The check-in has two shapes, and the boundary between them is enforced rather
+than documented.** `CheckinRequest` is the eight things a human can touch;
+`Checkin` is that plus the include/exclude lists and the recency window, which the
+server resolves. The resolved object is stored verbatim into
+`sessions.checkin_input` as the permanent record of why a plan looks the way it
+does — so a phone that could post `recent_exercise_ids` could rewrite that record.
+The request schema is a `strictObject` and `console:check` asserts that each of
+the three server-resolved fields is REJECTED rather than ignored when submitted.
+
+**Generating twice returns the session already there.** A two-minute wait invites
+a second press, and `uq_sessions_one_active_per_user` only stops a duplicate
+*active* session — two `planned` ones are perfectly legal and would cost a second
+API call plus a coin-flip about which one the TV picked up. The generate route
+checks for an open session first and hands it back. The same check is what makes
+reopening the phone mid-generation safe.
+
+**The inserted session, not the generate response, is the source of truth.** The
+request takes about two minutes, which is long enough that a locked phone, a
+dropped connection, or a browser giving up are all ordinary rather than
+exceptional. So the console keeps polling for the session independently, and a
+failed fetch drops back to waiting instead of erroring. That is what spec §7's
+"closing the phone during generation orphans nothing" has to mean in practice —
+the schema guarantee (`plan_generated` is NOT NULL, so the row only exists once
+the plan is complete) is only half of it.
+
+**The prompt, the generator and the planner's database access moved out of
+`scripts/` into `src/lib/planner/`.** The console generates from the same prompt
+the CLI does, and two copies would be two places for the prompt version, the
+effort setting or the refusal handling to drift — which would quietly make
+`plan --dry-run` print something the console does not send, destroying the only
+diagnostic that tool has. `scripts/planner/lib/` keeps thin re-export shims so the
+CLI's import paths still say what they need.
+
+**`user_preferences` is upserted, never updated.** There is no row until something
+creates one, and this account had none — an `update` would have silently written
+nothing and the sticky half of the check-in would have reset every day with no
+error anywhere. Confirmed against the live database rather than assumed.
+
+**The mirrored countdown interpolates but freezes when paused.** The TV writes its
+cursor every ~2.25s, so showing the raw value would make the phone jump 30 → 28 →
+25 beside a screen counting evenly. Carrying the last read forward with local
+elapsed time fixes that, but only while the TV says it is running: a paused clock
+that kept sliding would be the one case where the mirror actively lies about the
+screen in front of you. Both directions are asserted in `console:check`, along
+with a stale read flooring at zero rather than going negative.
+
+**A finished session asks to be rated for six hours, then stops asking.** The
+prompt exists because the phone is usually put down at the end of a workout rather
+than answered, so it has to survive a reload. But a rating prompt for Tuesday's
+session is not a prompt, it is an obstacle between you and today's check-in — and
+a rating given days late is worse data than no rating, which is also why Skip is a
+real, equally-weighted answer rather than a dismissal.
