@@ -45,3 +45,4 @@ next-env.d.ts
 /supabase/.temp
 assets/
 public/review.html
+public/probe/
