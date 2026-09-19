@@ -91,14 +91,25 @@ with nothing but a floor.
 
 ---
 
-## 4. There is no artwork at all
+## 4. There is no artwork yet
 
-**Severity: high — it is the biggest hole in the product, and it is work, not a bug.**
+**Severity: high — the biggest hole in the product. The pipeline now exists; the
+art does not.**
 
-The `assets` bucket is empty. Every one of the 91 catalog rows points at
-`catalog/{id}/still.svg` and not one file exists, so `resolveAsset()` returns null
-by design (a URL that 404s would give the renderer a broken image instead of a
-deliberate placeholder) and `Figure` shows the body position as text.
+**Update 2026-09-19:** the delivery path is built and proven end to end.
+`assets:upload` writes into the public bucket and sets `asset_ready` only after
+the storage write returns ok; `resolveAsset` branches on that flag and hands the
+television a real public URL. Verified with throwaway files: an uploaded movement
+resolves to a URL and an un-uploaded one still resolves to null, so a catalog
+half-covered in art renders correctly — which is the state it will be in for a
+long time.
+
+Decided: **animated 3D**, sourced from Mixamo first with the exotic movements
+filled in later. Whether it renders live on the set or is pre-rendered to video
+loops is waiting on `/stage/probe/render`, which measures a rigged character
+under load on the actual television.
+
+What remains is the art itself.
 
 The plumbing is finished and was built for this: `Figure` branches on
 `asset_url`/`asset_kind` and never on `asset_tier`, the box the art will occupy is

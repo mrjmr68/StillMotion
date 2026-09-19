@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
 
   const { data: rows, error: catalogError } = await supabase
     .from('exercise_catalog')
-    .select('id, name, cues, setup_note, timing_type, unilateral, body_position, intensity, asset_path')
+    .select('id, name, cues, setup_note, timing_type, unilateral, body_position, intensity, asset_path, asset_ready, asset_kind')
     .in('id', ids);
 
   if (catalogError) return json({ error: 'catalog_unavailable', detail: catalogError.message }, 500);

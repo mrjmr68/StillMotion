@@ -18,7 +18,8 @@
     "console:check": "node --env-file-if-exists=.env.local --import tsx scripts/console/check.ts",
     "console:watch": "node --env-file-if-exists=.env.local --import tsx scripts/console/watch.ts",
     "assets:generate": "node --env-file-if-exists=.env.local --import tsx scripts/assets/generate.ts",
-    "assets:review": "node --env-file-if-exists=.env.local --import tsx scripts/assets/review.ts"
+    "assets:review": "node --env-file-if-exists=.env.local --import tsx scripts/assets/review.ts",
+    "assets:upload": "node --env-file-if-exists=.env.local --import tsx scripts/assets/upload.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",

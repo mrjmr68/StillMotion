@@ -64,7 +64,9 @@ export type Database = {
       exercise_catalog: {
         Row: {
           aka: string[]
+          asset_kind: string | null
           asset_path: string
+          asset_ready: boolean
           asset_tier: string
           avoid_after: string[]
           body_position: string
@@ -92,7 +94,9 @@ export type Database = {
         }
         Insert: {
           aka?: string[]
+          asset_kind?: string | null
           asset_path: string
+          asset_ready?: boolean
           asset_tier: string
           avoid_after?: string[]
           body_position: string
@@ -120,7 +124,9 @@ export type Database = {
         }
         Update: {
           aka?: string[]
+          asset_kind?: string | null
           asset_path?: string
+          asset_ready?: boolean
           asset_tier?: string
           avoid_after?: string[]
           body_position?: string

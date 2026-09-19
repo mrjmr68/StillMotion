@@ -106,27 +106,42 @@ export async function currentSessionFor(userId: string) {
 /**
  * Resolve a catalog row's artwork.
  *
- * `asset_path` names a file in the public `assets` bucket. No files exist at
- * Tier 0, so this returns null and the renderer shows a placeholder — dropping
- * real art in later is an upload, not a code change.
+ * Branches on `asset_ready`, which is set by `assets:upload` only after a
+ * storage write returned ok. It deliberately does NOT branch on `asset_path`
+ * (populated for all 91 rows at import time, pointing at files that never
+ * existed) or on `asset_tier` (which describes the ambition, not the bytes).
+ *
+ * This used to return null unconditionally, which was right while the bucket was
+ * empty — a URL that 404s gives the renderer a broken image instead of a
+ * deliberate placeholder — but it also meant no artwork could ever appear,
+ * however much of it we made.
  */
-export function resolveAsset(assetPath: string | null): {
+export function resolveAsset(row: {
+  asset_path: string | null;
+  asset_ready?: boolean | null;
+  asset_kind?: string | null;
+}): {
   asset_url: string | null;
   asset_kind: 'image' | 'video' | null;
 } {
-  if (!assetPath) return { asset_url: null, asset_kind: null };
+  if (!row.asset_ready || !row.asset_path) return { asset_url: null, asset_kind: null };
 
   const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
   if (!base) return { asset_url: null, asset_kind: null };
 
-  const isVideo = /\.(mp4|m4v)$/i.test(assetPath);
-  const isImage = /\.(svg|png|jpe?g|webp)$/i.test(assetPath);
-  if (!isVideo && !isImage) return { asset_url: null, asset_kind: null };
+  const kind =
+    row.asset_kind === 'video' || row.asset_kind === 'image'
+      ? row.asset_kind
+      : /\.(mp4|webm|m4v)$/i.test(row.asset_path)
+        ? 'video'
+        : 'image';
 
-  // Tier 0: the row points at a path but nothing has been uploaded there yet.
-  // Returning a URL that 404s would give the renderer a broken image instead of
-  // a deliberate placeholder, so stay null until art actually exists.
-  return { asset_url: null, asset_kind: isVideo ? 'video' : 'image' };
+  // The bucket is public, so this needs no signing round-trip — which is the
+  // whole reason it is public: the television has no session to sign with.
+  return {
+    asset_url: `${base}/storage/v1/object/public/assets/${row.asset_path}`,
+    asset_kind: kind,
+  };
 }
 
 export type CatalogRowForStage = {
@@ -139,10 +154,12 @@ export type CatalogRowForStage = {
   body_position: string;
   intensity: number;
   asset_path: string | null;
+  asset_ready?: boolean | null;
+  asset_kind?: string | null;
 };
 
 export function toStageMovement(row: CatalogRowForStage): StageMovement {
-  const asset = resolveAsset(row.asset_path);
+  const asset = resolveAsset(row);
   return {
     id: row.id,
     name: row.name,
