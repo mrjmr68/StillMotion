@@ -16,7 +16,9 @@
     "stage:seed": "node --env-file-if-exists=.env.local --import tsx scripts/stage/seed.ts",
     "stage:drive": "node --env-file-if-exists=.env.local --import tsx scripts/stage/drive.ts",
     "console:check": "node --env-file-if-exists=.env.local --import tsx scripts/console/check.ts",
-    "console:watch": "node --env-file-if-exists=.env.local --import tsx scripts/console/watch.ts"
+    "console:watch": "node --env-file-if-exists=.env.local --import tsx scripts/console/watch.ts",
+    "assets:generate": "node --env-file-if-exists=.env.local --import tsx scripts/assets/generate.ts",
+    "assets:review": "node --env-file-if-exists=.env.local --import tsx scripts/assets/review.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",

@@ -43,3 +43,5 @@ next-env.d.ts
 
 # supabase CLI local cache
 /supabase/.temp
+assets/
+public/review.html
